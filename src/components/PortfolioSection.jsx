@@ -44,7 +44,7 @@ export default function PortfolioSection() {
     <section id="portfolio-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
       
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-50 to-white" />
+      <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 to-white" />
       
       {/* Tech Pattern Background */}
       <div className="absolute inset-0 opacity-25" style={{
@@ -56,7 +56,7 @@ export default function PortfolioSection() {
         
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-blue-600 uppercase bg-blue-100 border border-blue-300 px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-emerald-600 uppercase bg-emerald-100 border border-emerald-300 px-4 py-2 rounded-full">
             🏆 CASE STUDIES
           </div>
           <h2 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tight mt-6 uppercase leading-tight">
@@ -72,10 +72,10 @@ export default function PortfolioSection() {
           {displayedCases.map((study) => (
             <div 
               key={study.index} 
-              className="group relative bg-white border-2 border-blue-200 hover:border-blue-500 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              className="group relative bg-white border-2 border-emerald-200 hover:border-emerald-500 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             >
               {/* Index Badge */}
-              <div className="absolute top-4 right-4 text-xs font-bold text-blue-600 opacity-50 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 text-xs font-bold text-emerald-600 opacity-50 group-hover:opacity-100 transition-opacity">
                 Case Study {study.index}
               </div>
 
@@ -96,8 +96,8 @@ export default function PortfolioSection() {
                 </p>
 
                 {/* Results */}
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">
+                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
+                  <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">
                     Key Results
                   </p>
                   <div className="grid grid-cols-3 gap-3">
@@ -118,7 +118,7 @@ export default function PortfolioSection() {
                     {study.tech.map((tech, idx) => (
                       <span 
                         key={idx} 
-                        className="text-xs font-semibold text-blue-600 bg-blue-100 px-3 py-1.5 rounded-full border border-blue-300"
+                        className="text-xs font-semibold text-emerald-600 bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-300"
                       >
                         {tech}
                       </span>
@@ -131,7 +131,7 @@ export default function PortfolioSection() {
               <div className="mt-6 pt-6 border-t border-blue-200">
                 <a 
                   href="#evaluation-form" 
-                  className="text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors inline-flex items-center gap-2"
+                  className="text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors inline-flex items-center gap-2"
                 >
                   Learn More ➔
                 </a>
@@ -145,7 +145,7 @@ export default function PortfolioSection() {
           {!showAllCases && (
             <button 
               onClick={() => setShowAllCases(true)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
             >
               View All Case Studies ↓
             </button>
@@ -153,7 +153,7 @@ export default function PortfolioSection() {
           {showAllCases && (
             <button 
               onClick={() => setShowAllCases(false)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
             >
               Show Less ↑
             </button>
@@ -161,7 +161,7 @@ export default function PortfolioSection() {
         </div>
 
         {/* Statistics Section */}
-        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl p-12 text-white">
+        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-12 text-white">
           <h3 className="text-3xl md:text-4xl font-black uppercase mb-12 text-center">
             Impact By Numbers
           </h3>

@@ -43,13 +43,13 @@ export default function CapabilitiesGrid() {
 
   return (
     <section id="services-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900" />
       <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="techgrid" width="60" height="60" patternUnits="userSpaceOnUse"><rect width="60" height="60" fill="none" stroke="rgba(34,211,238,0.3)" stroke-width="0.5"/><circle cx="10" cy="10" r="1.5" fill="rgba(34,211,238,0.5)"/><circle cx="50" cy="50" r="1.5" fill="rgba(34,211,238,0.5)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23techgrid)"/></svg>')`,
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="techgrid" width="60" height="60" patternUnits="userSpaceOnUse"><rect width="60" height="60" fill="none" stroke="rgba(16,185,129,0.3)" stroke-width="0.5"/><circle cx="10" cy="10" r="1.5" fill="rgba(16,185,129,0.5)"/><circle cx="50" cy="50" r="1.5" fill="rgba(16,185,129,0.5)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23techgrid)"/></svg>')`,
         backgroundSize: '60px 60px'
       }} />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">

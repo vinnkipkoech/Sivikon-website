@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { postContactRequest } from '../api/client';
 
 export default function EvaluationForm() {
   const [formData, setFormData] = useState({
@@ -11,40 +12,51 @@ export default function EvaluationForm() {
     budget: 'Not Sure'
   });
   
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const resetForm = () => {
+    setFormData({
+      companyName: '',
+      contactPerson: '',
+      businessEmail: '',
+      phoneNumber: '',
+      serviceTrack: 'Software Development',
+      projectScope: '',
+      budget: 'Not Sure'
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrorMessage('');
+
     if (!formData.companyName || !formData.contactPerson || !formData.businessEmail || !formData.projectScope) {
-      alert("Please fill out all required fields before submitting.");
+      setErrorMessage('Please fill out all required fields before submitting.');
       return;
     }
-    
-    setSubmitted(true);
-    
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        companyName: '',
-        contactPerson: '',
-        businessEmail: '',
-        phoneNumber: '',
-        serviceTrack: 'Software Development',
-        projectScope: '',
-        budget: 'Not Sure'
-      });
-    }, 5000);
+
+    setStatus('loading');
+
+    try {
+      await postContactRequest(formData);
+      setStatus('success');
+      resetForm();
+    } catch (error) {
+      setStatus('error');
+      setErrorMessage(error.message || 'There was a problem submitting your request. Please try again.');
+    }
   };
 
   return (
     <section id="evaluation-form" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
       
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900" />
       <div className="absolute inset-0 bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] [background-size:32px_32px] opacity-15 pointer-events-none" />
       
       {/* Accent Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         
@@ -112,7 +124,7 @@ export default function EvaluationForm() {
         <div className="lg:col-span-7 w-full">
           <div className="bg-gradient-to-br from-slate-800/50 to-blue-900/50 border border-white/10 rounded-2xl p-8 sm:p-10 backdrop-blur-xl">
             
-            {submitted ? (
+            {status === 'success' ? (
               <div className="py-20 text-center space-y-6">
                 <div className="text-6xl">✨</div>
                 <h3 className="text-2xl font-black uppercase tracking-wider text-white">
@@ -237,11 +249,18 @@ export default function EvaluationForm() {
                 </div>
 
                 {/* Submit Button */}
+                {status === 'error' && (
+                  <div className="rounded-2xl border border-rose-500/20 bg-rose-500/10 text-rose-100 p-4 text-sm">
+                    {errorMessage}
+                  </div>
+                )}
+
                 <button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-sm py-4 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50"
+                  disabled={status === 'loading'}
+                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-sm py-4 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  SUBMIT REQUEST ➔
+                  {status === 'loading' ? 'SUBMITTING...' : 'SUBMIT REQUEST ➔'}
                 </button>
 
                 <p className="text-xs text-slate-400 text-center">

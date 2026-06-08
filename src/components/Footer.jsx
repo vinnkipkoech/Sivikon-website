@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand Section */}
           <div className="md:col-span-1">
             <div className="flex flex-col">
-              <span className="font-black text-white uppercase tracking-tight text-lg bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="font-black text-white uppercase tracking-tight text-lg bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Sivikon
               </span>
               <span className="text-xs text-slate-400 font-bold mt-2">
