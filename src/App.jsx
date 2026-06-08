@@ -1,32 +1,44 @@
 import React from 'react';
 import Navbar from './components/Navbar';
+import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import CapabilitiesGrid from './components/CapabilitiesGrid';
+import ProductsSuite from './components/ProductsSuite';
 import PortfolioSection from './components/PortfolioSection';
+import SimpleBrowser from './components/SimpleBrowser';
 import EvaluationForm from './components/EvaluationForm';
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-800 flex flex-col antialiased selection:bg-blue-600 selection:text-white">
-      {/* 1. Header Dock */}
+    <div className="min-h-screen bg-white text-slate-900 flex flex-col antialiased selection:bg-cyan-600 selection:text-white">
+      {/* Navigation */}
       <Navbar />
       
       <main className="flex-grow">
-        {/* 2. Core Profile Overview */}
+        {/* Hero Section */}
+        <Hero />
+
+        {/* About Section */}
         <AboutSection />
 
-        {/* 3. Engineering Grid */}
+        {/* Services/Capabilities */}
         <CapabilitiesGrid />
 
-        {/* 4. Real Client Vector Logos Grid */}
+        {/* Browser Demo */}
+        <SimpleBrowser />
+
+        {/* Products */}
+        <ProductsSuite />
+
+        {/* Portfolio */}
         <PortfolioSection />
 
-        {/* 5. Intakes */}
+        {/* Evaluation Form */}
         <EvaluationForm />
       </main>
 
-      {/* 6. Corporate Footprint */}
+      {/* Footer */}
       <Footer />
     </div>
   );
