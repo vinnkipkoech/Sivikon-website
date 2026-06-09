@@ -10,31 +10,32 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 flex flex-col antialiased selection:bg-cyan-600 selection:text-white">
-      {/* Navigation */}
+    <div className="min-h-screen bg-canvasDark text-white flex flex-col antialiased selection:bg-primary-500/30 selection:text-white">
+      {/* Navigation Layer */}
       <Navbar />
       
+      {/* Structured Content Architecture */}
       <main className="flex-grow">
-        {/* Hero Section */}
+        {/* Main Entry View */}
         <Hero />
 
-        {/* About Section */}
+        {/* Corporate Profile Matrix */}
         <AboutSection />
 
-        {/* Services/Capabilities */}
+        {/* Engineering Capabilities Track */}
         <CapabilitiesGrid />
 
-        {/* Browser Demo */}
+        {/* Served Sectors & Trust Verification */}
         <SimpleBrowser />
 
-        {/* Products */}
+        {/* Enterprise Solutions Suite */}
         <ProductsSuite />
 
-        {/* Portfolio */}
+        {/* Case Studies Track */}
         <PortfolioSection />
       </main>
 
-      {/* Footer */}
+      {/* Global Context Footer Anchor */}
       <Footer />
     </div>
   );

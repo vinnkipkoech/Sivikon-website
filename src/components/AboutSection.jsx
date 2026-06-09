@@ -2,89 +2,121 @@ import React from 'react';
 
 export default function AboutSection() {
   return (
-    <section id="about-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100" />
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.14),transparent_25%),radial-gradient(circle_at_bottom_right,rgba(16,185,129,0.08),transparent_25%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.25),transparent_55%)] opacity-60 pointer-events-none" />
+    <section id="about-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left bg-canvasDark">
+      {/* Background Ambient Glows */}
+      <div className="absolute top-1/4 left-[-10%] w-[500px] h-[500px] bg-primary-600/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-[-10%] w-[400px] h-[400px] bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
+          {/* Left Column: Profile & Context */}
           <div className="lg:col-span-7 space-y-10">
-            <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-emerald-600 uppercase bg-emerald-100 border border-emerald-300 px-4 py-2 rounded-full">
+            
+            {/* Tagline Badge */}
+            <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-primary-400 uppercase bg-primary-500/10 border border-primary-500/20 px-4 py-2 rounded-full backdrop-blur-md">
               CORPORATE COMPANY PROFILE
             </div>
+
             <div className="space-y-6">
-              <div className="rounded-3xl border border-white/70 bg-white/80 p-8 shadow-2xl backdrop-blur-xl">
-                <p className="text-xs uppercase tracking-widest text-emerald-600 mb-4">WE ARE</p>
-                <p className="text-slate-700 leading-relaxed">
+              {/* Highlight Intro Box */}
+              <div className="rounded-3xl border border-white/5 bg-dark-900/40 p-8 shadow-2xl backdrop-blur-xl">
+                <p className="text-xs font-mono font-bold uppercase tracking-widest text-primary-400 mb-4">// WE ARE</p>
+                <p className="text-dark-200 leading-relaxed font-medium">
                   Sivikon Technologies is an enterprise software partner focused on secure, scalable digital transformation for government, finance, telecom, and institutional organizations. We combine regional market insight with disciplined delivery to build mission-critical systems that work in Africa.
                 </p>
               </div>
-              <h2 className="text-5xl md:text-6xl font-black tracking-tight text-slate-900 uppercase leading-tight">
+              
+              <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white uppercase leading-tight">
                 Building Solutions for the African Enterprise
               </h2>
-              <p className="text-lg text-slate-700 leading-relaxed font-medium max-w-3xl">
+              <p className="text-lg text-dark-300 leading-relaxed font-medium max-w-3xl">
                 Ensuring efficiency, trust, and digital resilience. Registered in 2024, Sivikon Technologies Limited delivers custom full-stack software engineering, enterprise quality assurance, and automation for organizations scaling across East Africa.
               </p>
             </div>
 
+            {/* Information Grid Row 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-3xl border border-white/50 bg-white/70 p-6 shadow-2xl backdrop-blur-xl">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Registered Office & Contact</p>
-                <p className="text-sm font-semibold text-slate-900">Sivikon Technologies Limited</p>
-                <p className="text-sm text-slate-600 mt-3">Email: <a href="mailto:sivikontechnologies@gmail.com" className="text-cyan-600 hover:text-cyan-700">sivikontechnologies@gmail.com</a></p>
-                <p className="text-sm text-slate-600">Phone: <a href="tel:+254721501604" className="text-cyan-600 hover:text-cyan-700">+254 721 501 604</a></p>
-                <p className="text-sm text-slate-600">Presence: Kenya, East Africa, and global partners</p>
+              <div className="rounded-3xl border border-white/5 bg-dark-900/30 p-6 shadow-2xl backdrop-blur-xl">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-3">Registered Office & Contact</p>
+                <p className="text-sm font-bold text-white">Sivikon Technologies Limited</p>
+                <div className="mt-4 space-y-1.5 text-sm text-dark-300 font-medium">
+                  <p>Email: <a href="mailto:sivikontechnologies@gmail.com" className="text-primary-400 hover:text-primary-300 transition-colors">sivikontechnologies@gmail.com</a></p>
+                  <p>Phone: <a href="tel:+254721501604" className="text-primary-400 hover:text-primary-300 transition-colors">+254 721 501 604</a></p>
+                  <p className="text-xs text-dark-400 mt-2 pt-2 border-t border-white/5">Presence: Kenya, East Africa, and global partners</p>
+                </div>
               </div>
-              <div className="rounded-3xl border border-white/50 bg-white/70 p-6 shadow-2xl backdrop-blur-xl">
-                <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Integrated Digital Solutions</p>
-                <p className="text-sm text-slate-600 leading-relaxed">
+              
+              <div className="rounded-3xl border border-white/5 bg-dark-900/30 p-6 shadow-2xl backdrop-blur-xl flex flex-col justify-center">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-3">Integrated Digital Solutions</p>
+                <p className="text-sm text-dark-300 leading-relaxed font-medium">
                   Custom software engineering, end-to-end quality assurance, and automated testing for enterprise systems across education, healthcare, finance, government, and commerce.
                 </p>
               </div>
             </div>
 
+            {/* Information Grid Row 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-              <div className="rounded-3xl bg-emerald-950/95 border border-white/10 p-8">
-                <p className="text-sm uppercase tracking-widest text-emerald-300 mb-3">About Us</p>
-                <p className="text-slate-200 leading-relaxed">
+              <div className="rounded-3xl bg-primary-950/20 border border-primary-500/10 p-8 backdrop-blur-xl">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-3">About Us</p>
+                <p className="text-dark-200 leading-relaxed text-sm font-medium">
                   Founded by seasoned software architects and QA specialists, Sivikon Technologies is a fast-growing enterprise partner for digital transformation. We build high-performance systems that deliver reliability, regional compliance, and measurable business results.
                 </p>
               </div>
-              <div className="rounded-3xl bg-slate-100 border border-slate-200 p-8">
-                <p className="text-sm uppercase tracking-widest text-emerald-600 mb-3">Document Control</p>
-                <p className="text-sm text-slate-700"><span className="font-semibold">Version:</span> 2026.1</p>
-                <p className="text-sm text-slate-700"><span className="font-semibold">Release Date:</span> June 2026</p>
-                <p className="text-sm text-slate-700"><span className="font-semibold">Classification:</span> Commercial Profile</p>
+              
+              <div className="rounded-3xl bg-dark-900/20 border border-white/5 p-8 backdrop-blur-xl flex flex-col justify-center">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-dark-400 mb-4">Document Control</p>
+                <div className="space-y-2 text-sm text-dark-300 font-medium">
+                  <p><span className="text-dark-500 font-normal">Version:</span> 2026.1</p>
+                  <p><span className="text-dark-500 font-normal">Release Date:</span> June 2026</p>
+                  <p><span className="text-dark-500 font-normal">Classification:</span> Commercial Profile</p>
+                </div>
               </div>
             </div>
           </div>
 
+          {/* Right Column: Pillars (Mission, Vision, Values) */}
           <div className="lg:col-span-5 space-y-8">
-            <div className="rounded-3xl border border-slate-200 bg-white/95 p-8 shadow-sm">
-              <p className="text-xs uppercase tracking-widest text-slate-500 mb-3">Our Mission</p>
-              <p className="text-slate-700 leading-relaxed">
+            
+            {/* Mission Box */}
+            <div className="rounded-3xl border border-white/5 bg-dark-900/40 p-8 shadow-xl backdrop-blur-xl group hover:border-primary-500/20 transition-colors duration-300">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-3">Our Mission</p>
+              <p className="text-dark-300 leading-relaxed text-sm font-medium">
                 To empower businesses with top-tier custom software development and exceptional quality assurance frameworks. We execute clean, modern software delivery that shortens time-to-market, minimizes overhead costs, and elevates the user experience through engineering excellence and technical domain expertise.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white/95 p-8 shadow-sm">
-              <p className="text-xs uppercase tracking-widest text-slate-500 mb-3">Our Vision</p>
-              <p className="text-slate-700 leading-relaxed">
+            {/* Vision Box */}
+            <div className="rounded-3xl border border-white/5 bg-dark-900/40 p-8 shadow-xl backdrop-blur-xl group hover:border-primary-500/20 transition-colors duration-300">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-3">Our Vision</p>
+              <p className="text-dark-300 leading-relaxed text-sm font-medium">
                 To become a globally recognized leader in unified software creation and quality engineering ecosystem solutions, setting timeless industry benchmarks for innovation, bulletproof code compilation, and absolute professional transparency.
               </p>
             </div>
 
-            <div className="rounded-3xl border border-slate-200 bg-white/95 p-8 shadow-sm">
-              <p className="text-xs uppercase tracking-widest text-slate-500 mb-3">Our Core Values</p>
-              <ul className="space-y-4 text-slate-700 leading-relaxed">
-                <li><span className="font-semibold">Quality First:</span> An unyielding, zero-compromise dedication to modern programming standards and flawless software execution metrics.</li>
-                <li><span className="font-semibold">Continuous Innovation:</span> Actively adopting cutting-edge technologies, framework upgrades, and next-generation execution practices.</li>
-                <li><span className="font-semibold">Client-Centric Success:</span> Nurturing structured, transparent partnerships focused on high returns on investment.</li>
-                <li><span className="font-semibold">Integrity & Ethics:</span> Enforcing total transparency in engineering hours, software gaps, vulnerabilities, and project scopes.</li>
+            {/* Values Box */}
+            <div className="rounded-3xl border border-white/5 bg-dark-900/40 p-8 shadow-xl backdrop-blur-xl group hover:border-primary-500/20 transition-colors duration-300">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-4">Our Core Values</p>
+              <ul className="space-y-4 text-sm text-dark-300 leading-relaxed font-medium">
+                <li className="flex items-start gap-2.5">
+                  <span className="text-primary-400 font-bold mt-0.5">▪</span>
+                  <p><span className="text-white font-bold">Quality First:</span> An unyielding, zero-compromise dedication to modern programming standards and flawless software execution metrics.</p>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-primary-400 font-bold mt-0.5">▪</span>
+                  <p><span className="text-white font-bold">Continuous Innovation:</span> Actively adopting cutting-edge technologies, framework upgrades, and next-generation execution practices.</p>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-primary-400 font-bold mt-0.5">▪</span>
+                  <p><span className="text-white font-bold">Client-Centric Success:</span> Nurturing structured, transparent partnerships focused on high returns on investment.</p>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="text-primary-400 font-bold mt-0.5">▪</span>
+                  <p><span className="text-white font-bold">Integrity & Ethics:</span> Enforcing total transparency in engineering hours, software gaps, vulnerabilities, and project scopes.</p>
+                </li>
               </ul>
             </div>
+
           </div>
         </div>
       </div>

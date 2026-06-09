@@ -57,69 +57,88 @@ export default function ProductsSuite() {
   ];
 
   return (
-    <section id="products-suite" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 via-emerald-100 to-amber-100" />
-      <div className="absolute left-0 top-12 h-80 w-80 rounded-full bg-cyan-300/20 blur-3xl pointer-events-none" />
-      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-amber-300/20 blur-3xl pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_35%)] opacity-80 pointer-events-none" />
+    <section id="products-suite" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-canvasDark">
+      {/* Dynamic Ambient Background Glow Matrix */}
+      <div className="absolute left-[-5%] top-12 h-96 w-96 rounded-full bg-primary-600/5 blur-[120px] pointer-events-none" />
+      <div className="absolute right-[-5%] bottom-0 h-96 w-96 rounded-full bg-primary-500/5 blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-amber-700 uppercase bg-amber-100 border border-amber-300 px-4 py-2 rounded-full shadow-sm">
+        
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-primary-400 uppercase bg-primary-500/10 border border-primary-500/20 px-4 py-2 rounded-full backdrop-blur-md">
             CUSTOM SOFTWARE SOLUTIONS
           </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mt-6 uppercase leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mt-6 uppercase leading-tight">
             All Custom Systems Featured in One Place
           </h2>
-          <p className="text-lg md:text-xl text-slate-700 mt-6 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-dark-300 mt-6 leading-relaxed max-w-2xl mx-auto font-medium">
             Explore the full suite of enterprise-grade software solutions built for African organizations. Request a tailored system instantly by using the form below.
           </p>
         </div>
 
+        {/* Dynamic Solutions Layout Engine */}
         <div className="grid gap-8 xl:grid-cols-[2fr_1fr] items-start">
+          
+          {/* Main List Column */}
           <div className="grid gap-6 md:grid-cols-2">
             {solutions.map((solution, idx) => (
-              <div key={idx} className="rounded-3xl border border-amber-200 bg-white/90 p-8 shadow-lg shadow-amber-200/30 transition-all duration-300 hover:-translate-y-1">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-2xl shadow-inner shadow-amber-200/60 mb-4">
-                  {solution.icon}
+              <div 
+                key={idx} 
+                className="group relative rounded-3xl border border-white/5 bg-dark-900/40 p-8 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-primary-500/30 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-dark-950/60 text-2xl border border-white/5 shadow-inner mb-6 transform group-hover:scale-105 transition-transform duration-300">
+                    {solution.icon}
+                  </div>
+                  <h3 className="text-xl font-black text-white uppercase tracking-tight mb-3">
+                    {solution.title}
+                  </h3>
+                  <p className="text-sm text-dark-300 leading-relaxed font-medium mb-6">
+                    {solution.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-black text-slate-900 mb-3">{solution.title}</h3>
-                <p className="text-slate-600 leading-relaxed mb-6">{solution.description}</p>
+                
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-amber-800 hover:text-amber-900"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors mt-auto group/link"
                 >
                   Request This Solution
-                  <span className="text-amber-500">→</span>
+                  <span className="transform group-hover/link:translate-x-1 transition-transform">→</span>
                 </a>
               </div>
             ))}
           </div>
 
-          <aside className="rounded-[3rem] border border-cyan-200/80 bg-white/90 p-10 shadow-2xl shadow-cyan-200/20">
-            <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-cyan-700 uppercase bg-cyan-100 border border-cyan-200 px-4 py-2 rounded-full mb-6">
+          {/* Sidebar Navigation Flow Context */}
+          <aside className="rounded-[2.5rem] border border-white/5 bg-dark-900/20 p-8 md:p-10 shadow-2xl backdrop-blur-xl sticky top-28 group hover:border-primary-500/20 transition-colors duration-300">
+            <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-primary-400 uppercase bg-primary-500/10 border border-primary-500/20 px-4 py-2 rounded-full mb-6">
               HOW TO REQUEST
             </div>
-            <h3 className="text-4xl font-black text-slate-900 leading-tight mb-6">
+            
+            <h3 className="text-3xl font-black text-white uppercase tracking-tight leading-tight mb-6">
               Start your custom software request
             </h3>
+            
             <div className="space-y-4 mb-8">
               {requestSteps.map((step, idx) => (
-                <div key={idx} className="flex gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-5">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-200 text-sm font-black text-amber-900">
+                <div key={idx} className="flex gap-4 rounded-2xl border border-white/5 bg-dark-950/30 p-4 items-center">
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-500/10 border border-primary-500/20 text-xs font-mono font-black text-primary-400">
                     {idx + 1}
                   </div>
-                  <p className="text-sm text-slate-700 leading-relaxed">{step}</p>
+                  <p className="text-sm text-dark-200 font-medium leading-relaxed">{step}</p>
                 </div>
               ))}
             </div>
+            
             <a
               href="#contact"
-              className="inline-flex items-center justify-center w-full rounded-3xl bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-4 text-sm font-bold uppercase tracking-widest text-slate-950 shadow-lg shadow-amber-300/30 hover:from-amber-400 hover:to-amber-500 transition-all duration-200"
+              className="inline-flex items-center justify-center w-full rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-4 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-primary-500/10 transition-all duration-200 transform hover:scale-[1.02] hover:from-primary-400 hover:to-primary-500"
             >
               Request a Custom Solution
             </a>
           </aside>
+          
         </div>
       </div>
     </section>

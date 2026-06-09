@@ -9,7 +9,7 @@ export default function CapabilitiesGrid() {
       desc: "We architect single-page applications, reactive front-ends and fluid digital experiences using modern styling frameworks and performance-first components.",
       tech: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 / CSS3 Grid"],
       icon: "💻",
-      gradient: "from-blue-600 to-cyan-600"
+      gradient: "from-primary-500 to-primary-300"
     },
     {
       index: "02",
@@ -17,7 +17,7 @@ export default function CapabilitiesGrid() {
       desc: "We craft high-throughput microservices, secure RESTful and GraphQL interfaces, and resilient cloud architectures with middleware and token-based authentication.",
       tech: ["Node.js", "Express.js", "RESTful APIs", "JWT Auth Middleware"],
       icon: "☁️",
-      gradient: "from-cyan-600 to-teal-600"
+      gradient: "from-primary-500 to-primary-400"
     },
     {
       index: "03",
@@ -25,7 +25,7 @@ export default function CapabilitiesGrid() {
       desc: "Our teams deploy fault-tolerant databases, real-time analytics, and fleet integration pipelines built for high indexing speeds and transaction compliance.",
       tech: ["MongoDB", "Mongoose ODM", "PostgreSQL", "Data Aggregations"],
       icon: "🗄️",
-      gradient: "from-teal-600 to-blue-600"
+      gradient: "from-primary-600 to-primary-400"
     },
     {
       index: "04",
@@ -33,73 +33,75 @@ export default function CapabilitiesGrid() {
       desc: "We deliver automated and manual testing services that validate application layers, pinpoint performance bottlenecks, and prevent production defects.",
       tech: ["Selenium", "Playwright", "Cypress", "JMeter"],
       icon: "✅",
-      gradient: "from-cyan-600 to-blue-500"
+      gradient: "from-primary-500 to-primary-600"
     }
   ];
 
   const displayedCapabilities = capabilities;
 
   return (
-    <section id="services-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
-      <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 via-emerald-100 to-amber-100" />
-      <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="techgrid" width="60" height="60" patternUnits="userSpaceOnUse"><rect width="60" height="60" fill="none" stroke="rgba(16,185,129,0.18)" stroke-width="0.5"/><circle cx="10" cy="10" r="1.5" fill="rgba(16,185,129,0.22)"/><circle cx="50" cy="50" r="1.5" fill="rgba(16,185,129,0.22)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23techgrid)"/></svg>')`,
-        backgroundSize: '60px 60px'
-      }} />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
+    <section id="services-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left bg-canvasDark">
+      {/* Subtle background glow balance */}
+      <div className="absolute top-1/3 right-[-10%] w-96 h-96 bg-primary-600/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 left-[-5%] w-96 h-96 bg-primary-500/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
+        
+        {/* Header Block */}
         <div className="max-w-3xl mb-20">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 border border-cyan-500/30 px-4 py-2 rounded-full backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-primary-400 uppercase bg-primary-500/10 border border-primary-500/20 px-4 py-2 rounded-full backdrop-blur-md">
             ⚙️ CORE CAPABILITIES
           </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-white mt-6 uppercase leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mt-6 uppercase leading-tight">
             Engineering Excellence Across All Domains
           </h2>
-          <p className="text-lg md:text-xl text-slate-300 mt-6 leading-relaxed max-w-2xl">
+          <p className="text-lg text-dark-400 mt-6 leading-relaxed max-w-2xl font-medium">
             Our specialized delivery tracks bring structural reliability, rapid scaling, and innovation to your enterprise digital platforms.
           </p>
         </div>
 
+        {/* Re-Architected Capabilities Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
           {displayedCapabilities.map((cap, idx) => (
             <div 
               key={idx} 
-              className="group relative bg-white/90 border border-slate-200 p-8 rounded-3xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 shadow-2xl shadow-amber-200/40"
+              className="group relative bg-dark-900/40 border border-white/5 p-8 rounded-3xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-primary-500/30 shadow-2xl backdrop-blur-xl"
             >
-              <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
-                {cap.icon}
+              {/* Index Number */}
+              <div className="absolute top-6 right-8 text-xs font-mono font-bold text-dark-500 group-hover:text-primary-400 transition-colors">
+                // {cap.index}
               </div>
 
-              <div className="absolute top-4 right-4 text-xs font-bold text-amber-600 opacity-70 group-hover:opacity-100 transition-opacity">
-                {cap.index}
-              </div>
-
+              {/* Main Content Area */}
               <div className="space-y-4 flex-grow">
-                <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight">
+                <div className="text-4xl mb-6 inline-block transform group-hover:scale-110 transition-transform duration-300">
+                  {cap.icon}
+                </div>
+                <h3 className="text-xl font-black text-white uppercase tracking-tight">
                   {cap.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-dark-300 leading-relaxed font-medium">
                   {cap.desc}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-slate-200">
-                <p className="text-xs font-bold text-amber-700 uppercase tracking-widest mb-4">
+              {/* Technologies Sub-Section */}
+              <div className="pt-6 mt-6 border-t border-white/5">
+                <p className="text-[11px] font-bold text-primary-400 uppercase tracking-widest mb-4">
                   Core Technologies
                 </p>
-                <ul className="space-y-2.5">
+                <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                   {cap.tech.map((item, tIdx) => (
-                    <li key={tIdx} className="flex items-center gap-2.5 text-sm text-slate-700">
-                      <span className="w-2 h-2 bg-amber-500 rounded-full shadow-lg shadow-amber-200/60" />
+                    <div key={tIdx} className="flex items-center gap-2.5 text-sm text-dark-200">
+                      <span className="w-1.5 h-1.5 bg-primary-500 rounded-full group-hover:scale-125 transition-transform duration-300" />
                       {item}
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </div>
 
-              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-amber-100/60 via-transparent to-transparent" />
+              {/* Subtle Internal Highlight Glow on hover */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-primary-500/5 via-transparent to-transparent" />
             </div>
           ))}
         </div>

@@ -41,28 +41,22 @@ export default function PortfolioSection() {
   const displayedCases = showAllCases ? caseStudies : caseStudies.slice(0, 2);
 
   return (
-    <section id="portfolio-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
+    <section id="portfolio-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left bg-canvasDark">
       
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 to-white" />
-      
-      {/* Tech Pattern Background */}
-      <div className="absolute inset-0 opacity-25" style={{
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="bgpattern" width="60" height="60" patternUnits="userSpaceOnUse"><path d="M0 30 Q15 0 30 30 T60 30" fill="none" stroke="rgba(59,130,246,0.2)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23bgpattern)"/></svg>')`,
-        backgroundSize: '60px 60px'
-      }} />
+      {/* Background Ambient Glow Layout */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-20">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-emerald-600 uppercase bg-emerald-100 border border-emerald-300 px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-primary-400 uppercase bg-primary-500/10 border border-primary-500/20 px-4 py-2 rounded-full backdrop-blur-md">
             🏆 CASE STUDIES
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-slate-900 tracking-tight mt-6 uppercase leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black text-white tracking-tight mt-6 uppercase leading-tight">
             Proven Track Record
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 mt-6 leading-relaxed max-w-2xl">
+          <p className="text-lg text-dark-300 mt-6 leading-relaxed max-w-2xl font-medium">
             Delivering measurable impact across government, healthcare, retail, and enterprise sectors. See how we've transformed businesses worldwide.
           </p>
         </div>
@@ -72,53 +66,53 @@ export default function PortfolioSection() {
           {displayedCases.map((study) => (
             <div 
               key={study.index} 
-              className="group relative bg-white border-2 border-emerald-200 hover:border-emerald-500 rounded-2xl p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
+              className="group relative bg-dark-900/40 border border-white/5 rounded-3xl p-8 transition-all duration-300 hover:border-primary-500/30 hover:-translate-y-1.5 shadow-2xl backdrop-blur-xl flex flex-col justify-between"
             >
               {/* Index Badge */}
-              <div className="absolute top-4 right-4 text-xs font-bold text-emerald-600 opacity-50 group-hover:opacity-100 transition-opacity">
-                Case Study {study.index}
+              <div className="absolute top-6 right-8 text-xs font-mono font-bold text-dark-500 group-hover:text-primary-400 transition-colors">
+                // Case Study {study.index}
               </div>
 
-              <div className="space-y-6">
+              <div className="space-y-6 flex-grow">
                 {/* Client & Title */}
                 <div>
-                  <p className="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-2">
+                  <p className="text-xs font-bold text-primary-400 uppercase tracking-widest mb-2">
                     {study.client}
                   </p>
-                  <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight leading-tight">
+                  <h3 className="text-xl font-black text-white uppercase tracking-tight leading-tight">
                     {study.title}
                   </h3>
                 </div>
 
                 {/* Description */}
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-dark-300 leading-relaxed font-medium">
                   {study.description}
                 </p>
 
-                {/* Results */}
-                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4">
-                  <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">
+                {/* Results Internal Panel */}
+                <div className="bg-dark-950/40 border border-white/5 rounded-2xl p-5">
+                  <p className="text-[11px] font-bold text-dark-400 uppercase tracking-widest mb-3.5">
                     Key Results
                   </p>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-3 gap-4">
                     {study.results.map((result, idx) => (
-                      <div key={idx} className="text-center">
-                        <p className="text-sm font-bold text-slate-900">{result}</p>
+                      <div key={idx} className="flex flex-col justify-center">
+                        <p className="text-sm font-bold text-white leading-snug">{result}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Technology Stack */}
+                {/* Technology Stack Tags */}
                 <div>
-                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
+                  <p className="text-[11px] font-bold text-dark-400 uppercase tracking-widest mb-3">
                     Technology Stack
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {study.tech.map((tech, idx) => (
                       <span 
                         key={idx} 
-                        className="text-xs font-semibold text-emerald-600 bg-emerald-100 px-3 py-1.5 rounded-full border border-emerald-300"
+                        className="text-xs font-semibold text-dark-200 bg-dark-900/60 px-3 py-1.5 rounded-xl border border-white/5 group-hover:border-primary-500/10 transition-colors"
                       >
                         {tech}
                       </span>
@@ -127,60 +121,54 @@ export default function PortfolioSection() {
                 </div>
               </div>
 
-              {/* CTA */}
-              <div className="mt-6 pt-6 border-t border-blue-200">
+              {/* Action CTA Link */}
+              <div className="mt-8 pt-5 border-t border-white/5">
                 <a 
                   href="#contact" 
-                  className="text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors inline-flex items-center gap-2"
+                  className="text-sm font-bold text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center gap-2 group/link"
                 >
-                  Learn More ➔
+                  Learn More 
+                  <span className="transform group-hover/link:translate-x-1 transition-transform">➔</span>
                 </a>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Expand/Collapse Button */}
-        <div className="flex justify-center mb-16">
-          {!showAllCases && (
-            <button 
-              onClick={() => setShowAllCases(true)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
-            >
-              View All Case Studies ↓
-            </button>
-          )}
-          {showAllCases && (
-            <button 
-              onClick={() => setShowAllCases(false)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
-            >
-              Show Less ↑
-            </button>
-          )}
+        {/* Expand/Collapse Button Container */}
+        <div className="flex justify-center mb-24">
+          <button 
+            onClick={() => setShowAllCases(!showAllCases)}
+            className="inline-flex items-center justify-center rounded-xl bg-dark-900/60 border border-white/5 hover:border-primary-500/30 px-8 py-3.5 text-sm font-bold uppercase tracking-widest text-white shadow-xl transition-all duration-200 transform hover:scale-[1.02]"
+          >
+            {showAllCases ? 'Show Less ↑' : 'View All Case Studies ↓'}
+          </button>
         </div>
 
-        {/* Statistics Section */}
-        <div className="bg-gradient-to-r from-emerald-600 to-teal-600 rounded-2xl p-12 text-white">
-          <h3 className="text-3xl md:text-4xl font-black uppercase mb-12 text-center">
+        {/* Highlight Banner: Impact Statistics */}
+        <div className="bg-gradient-to-br from-dark-900/60 to-dark-950/40 border border-white/5 rounded-3xl p-12 text-white shadow-2xl backdrop-blur-xl relative overflow-hidden group hover:border-primary-500/20 transition-colors duration-300">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-primary-500/5 rounded-full blur-3xl pointer-events-none" />
+          
+          <h3 className="text-2xl md:text-3xl font-black uppercase mb-12 text-center tracking-tight">
             Impact By Numbers
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <p className="text-4xl md:text-5xl font-black">150+</p>
-              <p className="text-sm mt-2 opacity-90">Projects Delivered</p>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center divide-y md:divide-y-0 md:divide-x divide-white/5">
+            <div className="pt-4 md:pt-0">
+              <p className="text-4xl md:text-5xl font-black text-white tracking-tight">150+</p>
+              <p className="text-xs font-bold uppercase tracking-widest mt-3 text-primary-400">Projects Delivered</p>
             </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-black">500K+</p>
-              <p className="text-sm mt-2 opacity-90">Active Users</p>
+            <div className="pt-4 md:pt-0">
+              <p className="text-4xl md:text-5xl font-black text-white tracking-tight">500K+</p>
+              <p className="text-xs font-bold uppercase tracking-widest mt-3 text-primary-400">Active Users</p>
             </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-black">99.9%</p>
-              <p className="text-sm mt-2 opacity-90">Uptime Guarantee</p>
+            <div className="pt-4 md:pt-0">
+              <p className="text-4xl md:text-5xl font-black text-white tracking-tight">99.9%</p>
+              <p className="text-xs font-bold uppercase tracking-widest mt-3 text-primary-400">Uptime Guarantee</p>
             </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-black">2024</p>
-              <p className="text-sm mt-2 opacity-90">Established</p>
+            <div className="pt-4 md:pt-0">
+              <p className="text-4xl md:text-5xl font-black text-white tracking-tight">2024</p>
+              <p className="text-xs font-bold uppercase tracking-widest mt-3 text-primary-400">Established</p>
             </div>
           </div>
         </div>

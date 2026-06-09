@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SimpleBrowser() {
+export default function TrustedSection() {
   const trustedClients = [
     'ABSA Bank Group',
     'MTECH Communications',
@@ -40,59 +40,97 @@ export default function SimpleBrowser() {
   ];
 
   return (
-    <section id="trusted-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
-      <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 via-white to-slate-100" />
-      <div className="absolute inset-0 bg-[radial-gradient(#bfdbfe_1px,transparent_1px)] [background-size:32px_32px] opacity-20 pointer-events-none" />
+    <section id="trusted-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left bg-canvasDark">
+      {/* Background Matrix Layering */}
+      <div className="absolute top-1/4 right-[-5%] w-[450px] h-[450px] bg-primary-600/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-[-5%] w-[450px] h-[450px] bg-primary-500/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.015)_1px,transparent_1px)] [background-size:32px_32px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
+        
+        {/* Header Block */}
         <div className="max-w-3xl mb-20">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-emerald-600 uppercase bg-emerald-100 border border-emerald-300 px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-primary-400 uppercase bg-primary-500/10 border border-primary-500/20 px-4 py-2 rounded-full backdrop-blur-md">
             INDUSTRIES WE SERVE
           </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mt-6 uppercase leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight text-white mt-6 uppercase leading-tight">
             Built for Every African Sector
           </h2>
-          <p className="text-lg md:text-xl text-slate-600 mt-6 leading-relaxed max-w-2xl">
+          <p className="text-lg text-dark-300 mt-6 leading-relaxed max-w-2xl font-medium">
             We deliver enterprise solutions that organizations trust for mission-critical processes, compliance, and digital growth across sectors.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {/* Industries Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-24">
           {industries.map((industry, idx) => (
-            <div key={idx} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="text-xs uppercase tracking-widest text-emerald-600 font-bold mb-2">{industry.name}</div>
-              <p className="text-sm text-slate-700 leading-relaxed">{industry.label}</p>
+            <div 
+              key={idx} 
+              className="group rounded-2xl border border-white/5 bg-dark-900/40 p-6 shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-primary-500/30 hover:-translate-y-1"
+            >
+              <div className="text-xs uppercase tracking-widest text-primary-400 font-bold mb-2 group-hover:text-primary-300 transition-colors">
+                {industry.name}
+              </div>
+              <p className="text-sm text-dark-300 font-medium leading-relaxed">
+                {industry.label}
+              </p>
             </div>
           ))}
         </div>
 
+        {/* Central Trust Banner */}
         <div className="max-w-3xl mx-auto mb-16">
-          <div className="rounded-3xl bg-slate-50 border border-slate-200 p-8 shadow-sm text-center">
-            <p className="text-xs uppercase tracking-widest text-emerald-600 mb-3">Trusted by Enterprise Leaders</p>
-            <h2 className="text-4xl font-black text-slate-900">Digital Systems Built for African Operations</h2>
-            <p className="text-slate-600 mt-4 leading-relaxed">
+          <div className="rounded-3xl bg-dark-900/20 border border-white/5 p-8 md:p-12 shadow-2xl backdrop-blur-xl text-center group hover:border-primary-500/20 transition-colors duration-300">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-primary-400 mb-4">// TRUSTED BY ENTERPRISE LEADERS</p>
+            <h3 className="text-3xl font-black text-white uppercase tracking-tight">
+              Digital Systems Built for African Operations
+            </h3>
+            <p className="text-sm text-dark-300 mt-4 leading-relaxed max-w-xl mx-auto font-medium">
               We help organizations across sectors deploy secure, compliant, and user-friendly digital platforms that simplify workflows and improve measurable outcomes.
             </p>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+        {/* Trusted Clients Corporate Badge Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-24">
           {trustedClients.map((client, idx) => (
-            <div key={idx} className="rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-              <div className="text-sm font-semibold text-slate-900">{client}</div>
+            <div 
+              key={idx} 
+              className="rounded-2xl border border-white/5 bg-dark-900/40 py-5 px-6 text-center shadow-lg backdrop-blur-xl flex items-center justify-center min-h-[4.5rem] group hover:border-primary-500/20 transition-all duration-300"
+            >
+              <div className="text-sm font-bold tracking-wide text-dark-200 group-hover:text-white transition-colors">
+                {client}
+              </div>
             </div>
           ))}
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
+        {/* Testimonials Feed Matrix */}
+        <div className="grid gap-6 lg:grid-cols-3">
           {testimonials.map((item, idx) => (
-            <div key={idx} className="rounded-3xl border border-blue-100 bg-white p-8 shadow-lg">
-              <p className="text-slate-700 leading-relaxed">“{item.quote}”</p>
-              <div className="mt-6 text-sm font-bold text-slate-900">{item.name}</div>
-              <div className="text-xs uppercase tracking-widest text-slate-500 mt-1">{item.title}</div>
+            <div 
+              key={idx} 
+              className="group relative rounded-3xl border border-white/5 bg-dark-900/40 p-8 shadow-2xl backdrop-blur-xl flex flex-col justify-between transition-all duration-300 hover:border-primary-500/20"
+            >
+              <p className="text-sm text-dark-200 leading-relaxed font-medium italic">
+                “{item.quote}”
+              </p>
+              
+              <div className="mt-8 pt-5 border-t border-white/5">
+                <div className="text-sm font-black tracking-tight text-white uppercase">
+                  {item.name}
+                </div>
+                <div className="text-[10px] font-bold uppercase tracking-widest text-primary-400 mt-1.5">
+                  {item.title}
+                </div>
+              </div>
+
+              {/* Minimal internal glow hint on card hover */}
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-b from-primary-500/5 to-transparent" />
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

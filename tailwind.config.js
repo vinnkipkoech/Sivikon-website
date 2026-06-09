@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Your custom canvas background color
+        canvasDark: '#070b13',
         primary: {
           50: '#f0f7ff',
           100: '#e0effe',
@@ -47,9 +49,10 @@ export default {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 90deg at 50% 50%, var(--tw-gradient-stops))',
+        // Added semantic premium mesh gradient utility mapped directly to your theme colors
+        'mesh-glow': 'radial-gradient(at 0% 0%, rgba(14,165,233,0.12) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(2,132,199,0.15) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(249,115,22,0.06) 0px, transparent 50%)',
       },
     },
   },
   plugins: [],
 }
-
