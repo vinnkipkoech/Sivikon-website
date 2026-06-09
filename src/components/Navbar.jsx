@@ -42,7 +42,7 @@ export default function Navbar() {
             </span>
             <div className="flex flex-col leading-tight">
               <span className="text-sm font-black uppercase tracking-[0.3em] text-white">Sivikon</span>
-              <span className="text-[10px] uppercase tracking-[0.35em] text-slate-400">Enterprise Software</span>
+              <span className="text-[10px] uppercase tracking-[0.35em] text-slate-400">Technologies</span>
             </div>
           </a>
 
