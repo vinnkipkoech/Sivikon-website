@@ -91,12 +91,12 @@ export default function Navbar() {
 
             <a href="#portfolio-section" className="px-4 py-2 rounded-lg hover:text-amber-300 transition-colors">Portfolio</a>
             <a href="#about-section" className="px-4 py-2 rounded-lg hover:text-amber-300 transition-colors">About</a>
-            <a href="#evaluation-form" className="px-4 py-2 rounded-lg hover:text-amber-300 transition-colors">Contact</a>
+            <a href="#contact" className="px-4 py-2 rounded-lg hover:text-amber-300 transition-colors">Contact</a>
           </div>
 
           <div className="hidden md:block">
             <a
-              href="#evaluation-form"
+              href="#contact"
               className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-500 to-orange-500 px-6 py-3 text-sm font-bold uppercase tracking-widest text-slate-950 shadow-lg shadow-amber-300/30 transition-all duration-200 hover:from-amber-400 hover:to-orange-400"
             >
               Get Started
@@ -182,7 +182,7 @@ export default function Navbar() {
           <a href="#about-section" onClick={closeMobileMenu} className="block rounded-2xl px-4 py-3 text-sm font-semibold text-slate-200 hover:bg-slate-900 hover:text-amber-300 transition-colors">
             About
           </a>
-          <a href="#evaluation-form" onClick={closeMobileMenu} className="block rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-3 text-center text-sm font-bold text-slate-950 transition hover:from-amber-400 hover:to-orange-400">
+          <a href="#contact" onClick={closeMobileMenu} className="block rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 px-4 py-3 text-center text-sm font-bold text-slate-950 transition hover:from-amber-400 hover:to-orange-400">
             Get Started
           </a>
         </div>

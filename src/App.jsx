@@ -6,7 +6,6 @@ import CapabilitiesGrid from './components/CapabilitiesGrid';
 import ProductsSuite from './components/ProductsSuite';
 import PortfolioSection from './components/PortfolioSection';
 import SimpleBrowser from './components/SimpleBrowser';
-import EvaluationForm from './components/EvaluationForm';
 import Footer from './components/Footer';
 
 function App() {
@@ -33,9 +32,6 @@ function App() {
 
         {/* Portfolio */}
         <PortfolioSection />
-
-        {/* Evaluation Form */}
-        <EvaluationForm />
       </main>
 
       {/* Footer */}

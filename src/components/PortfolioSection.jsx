@@ -130,7 +130,7 @@ export default function PortfolioSection() {
               {/* CTA */}
               <div className="mt-6 pt-6 border-t border-blue-200">
                 <a 
-                  href="#evaluation-form" 
+                  href="#contact" 
                   className="text-sm font-bold text-emerald-600 hover:text-emerald-700 transition-colors inline-flex items-center gap-2"
                 >
                   Learn More ➔

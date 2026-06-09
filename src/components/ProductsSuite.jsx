@@ -86,7 +86,7 @@ export default function ProductsSuite() {
                 <h3 className="text-xl font-black text-slate-900 mb-3">{solution.title}</h3>
                 <p className="text-slate-600 leading-relaxed mb-6">{solution.description}</p>
                 <a
-                  href="#evaluation-form"
+                  href="#contact"
                   className="inline-flex items-center gap-2 text-sm font-bold text-amber-800 hover:text-amber-900"
                 >
                   Request This Solution
@@ -114,7 +114,7 @@ export default function ProductsSuite() {
               ))}
             </div>
             <a
-              href="#evaluation-form"
+              href="#contact"
               className="inline-flex items-center justify-center w-full rounded-3xl bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-4 text-sm font-bold uppercase tracking-widest text-slate-950 shadow-lg shadow-amber-300/30 hover:from-amber-400 hover:to-amber-500 transition-all duration-200"
             >
               Request a Custom Solution
