@@ -31,3 +31,26 @@ app.post('/api/contact', (req, res) => {
   res.json({ success: true });
 });
 ```
+
+## Deploying the frontend to Vercel
+
+1. Push this repository to GitHub.
+2. Create a new Vercel project and connect it to the repo.
+3. Use the root directory for deployment.
+4. Vercel will use `npm run build` and deploy the `dist` folder automatically.
+5. Set an environment variable in Vercel:
+   - `VITE_API_URL=https://<your-render-service>.onrender.com`
+
+This repo includes `vercel.json` to route SPA paths correctly.
+
+## Deploying the backend to Render
+
+The backend lives in `backend/`.
+
+1. Create a new Web Service on Render.
+2. Connect it to this repository.
+3. Set the root directory to `backend`.
+4. Use `npm start` as the start command.
+5. Optional: set `CORS_ORIGINS=https://<your-vercel-url>` to restrict access to your frontend.
+
+Once both services are deployed, update `VITE_API_URL` on Vercel to point at the Render service URL.
