@@ -53,20 +53,26 @@ export default function Navbar() {
             <a href="#hero" className="px-4 py-2 hover:text-cyan-400 transition-colors duration-200 rounded">
               HOME
             </a>
-            <div className="relative" onMouseEnter={() => openDropdownMenu('about')} onMouseLeave={closeDropdownMenu}>
+            <div className="relative" onMouseEnter={() => openDropdownMenu('solutions')} onMouseLeave={closeDropdownMenu}>
               <button
-                onClick={() => toggleDropdown('about')}
+                onClick={() => toggleDropdown('solutions')}
                 className="px-4 py-2 flex items-center gap-1 hover:text-cyan-400 transition-colors duration-200 rounded"
               >
-                ABOUT
-                <svg className={`w-4 h-4 transition-transform ${openDropdown === 'about' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                SOLUTIONS
+                <svg className={`w-4 h-4 transition-transform ${openDropdown === 'solutions' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                 </svg>
               </button>
-              {openDropdown === 'about' && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-slate-900 border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden">
-                  <a href="#about-section" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300">
-                    WE ARE
+              {openDropdown === 'solutions' && (
+                <div className="absolute top-full left-0 mt-2 w-64 bg-slate-900 border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden">
+                  <a href="#products-suite" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300 border-b border-emerald-500/10">
+                    Education Platforms
+                  </a>
+                  <a href="#products-suite" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300 border-b border-emerald-500/10">
+                    Healthcare Systems
+                  </a>
+                  <a href="#products-suite" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300">
+                    Financial & Public Sector
                   </a>
                 </div>
               )}
@@ -83,50 +89,28 @@ export default function Navbar() {
                 </svg>
               </button>
               {openDropdown === 'services' && (
-                <div className="absolute top-full left-0 mt-2 w-56 bg-slate-900 border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden">
+                <div className="absolute top-full left-0 mt-2 w-64 bg-slate-900 border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden">
                   <a href="#services-section" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300 border-b border-emerald-500/10">
-                    Full-Stack Development
+                    Custom Software
                   </a>
                   <a href="#services-section" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300 border-b border-emerald-500/10">
-                    Quality Assurance
+                    QA & Testing
                   </a>
                   <a href="#services-section" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300">
-                    Cloud & Security
-                  </a>
-                </div>
-              )}
-            </div>
-
-            <div className="relative" onMouseEnter={() => openDropdownMenu('products')} onMouseLeave={closeDropdownMenu}>
-              <button
-                onClick={() => toggleDropdown('products')}
-                className="px-4 py-2 flex items-center gap-1 hover:text-cyan-400 transition-colors duration-200 rounded"
-              >
-                PRODUCTS
-                <svg className={`w-4 h-4 transition-transform ${openDropdown === 'products' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </button>
-              {openDropdown === 'products' && (
-                <div className="absolute top-full left-0 mt-2 w-72 bg-slate-900 border border-emerald-500/30 rounded-2xl shadow-2xl overflow-hidden">
-                  <a href="#products-suite" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300 border-b border-emerald-500/10">
-                    Financial Systems
-                  </a>
-                  <a href="#products-suite" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300 border-b border-emerald-500/10">
-                    Telecom Systems
-                  </a>
-                  <a href="#products-suite" onClick={() => setOpenDropdown(null)} className="block px-4 py-3 hover:bg-emerald-600/20 transition-colors text-slate-200 hover:text-emerald-300">
-                    Public Sector Systems
+                    Cloud Ops & Security
                   </a>
                 </div>
               )}
             </div>
 
             <a href="#portfolio-section" className="px-4 py-2 hover:text-cyan-400 transition-colors duration-200 rounded">
-              PORTFOLIO
+              CASE STUDIES
             </a>
-            <a href="#products-suite" className="px-4 py-2 hover:text-cyan-400 transition-colors duration-200 rounded">
-              CLIENTS
+            <a href="#trusted-section" className="px-4 py-2 hover:text-cyan-400 transition-colors duration-200 rounded">
+              INDUSTRIES
+            </a>
+            <a href="#about-section" className="px-4 py-2 hover:text-cyan-400 transition-colors duration-200 rounded">
+              ABOUT
             </a>
           </div>
 
@@ -149,9 +133,9 @@ export default function Navbar() {
           <div className="hidden md:block">
             <a
               href="#evaluation-form"
-              className="inline-flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold text-[10px] tracking-widest px-6 py-2.5 rounded-lg uppercase transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-[10px] tracking-widest px-6 py-2.5 rounded-lg uppercase transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50"
             >
-              CONTACT US ➔
+              REQUEST DEMO ➔
             </a>
           </div>
         </div>
@@ -243,13 +227,13 @@ export default function Navbar() {
           </div>
 
           <a href="#portfolio-section" onClick={handleMobileLinkClick} className="block rounded-lg px-4 py-3 text-sm font-bold text-slate-200 hover:bg-slate-900 hover:text-cyan-300 transition-colors">
-            PORTFOLIO
+            CASE STUDIES
           </a>
-          <a href="#products-suite" onClick={handleMobileLinkClick} className="block rounded-lg px-4 py-3 text-sm font-bold text-slate-200 hover:bg-slate-900 hover:text-cyan-300 transition-colors">
-            CLIENTS
+          <a href="#trusted-section" onClick={handleMobileLinkClick} className="block rounded-lg px-4 py-3 text-sm font-bold text-slate-200 hover:bg-slate-900 hover:text-cyan-300 transition-colors">
+            INDUSTRIES
           </a>
-          <a href="#evaluation-form" onClick={handleMobileLinkClick} className="block rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 px-4 py-3 text-center text-sm font-bold text-white transition hover:from-cyan-400 hover:to-blue-400">
-            CONTACT
+          <a href="#evaluation-form" onClick={handleMobileLinkClick} className="block rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-3 text-center text-sm font-bold text-white transition hover:from-emerald-400 hover:to-teal-400">
+            REQUEST DEMO
           </a>
         </div>
       </div>

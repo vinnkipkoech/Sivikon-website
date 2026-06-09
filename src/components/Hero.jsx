@@ -20,13 +20,13 @@ export default function Hero() {
 
           <div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white tracking-tight leading-tight uppercase mb-4">
-              Spice up your Business with our <br />
+              We Build Custom Software That<br />
               <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 bg-clip-text text-transparent">
-                Cutting Edge Solutions
+                Powers African Enterprise
               </span>
             </h1>
             <p className="text-lg text-slate-300 max-w-xl leading-relaxed font-medium mt-6">
-              Sivikon Technologies delivers secure, scalable software products and systems for government, finance, telecom, and enterprise teams. We build modern digital platforms that drive growth, efficiency, and trust.
+              Sivikon Technologies delivers secure, scalable digital systems for government, finance, telecom, and institutional organizations. We build platforms designed for African realities, fast growth, and strong compliance.
             </p>
           </div>
 

@@ -18,14 +18,14 @@ export default function AboutSection() {
               <div className="rounded-3xl border border-white/70 bg-white/80 p-8 shadow-2xl backdrop-blur-xl">
                 <p className="text-xs uppercase tracking-widest text-emerald-600 mb-4">WE ARE</p>
                 <p className="text-slate-700 leading-relaxed">
-                  Sivikon Technologies is an enterprise software partner focused on secure, scalable digital transformation for government, finance, telecom, and institutional clients. We combine deep technical expertise with disciplined delivery processes to build mission-critical solutions.
+                  Sivikon Technologies is an enterprise software partner focused on secure, scalable digital transformation for government, finance, telecom, and institutional organizations. We combine regional market insight with disciplined delivery to build mission-critical systems that work in Africa.
                 </p>
               </div>
               <h2 className="text-5xl md:text-6xl font-black tracking-tight text-slate-900 uppercase leading-tight">
-                Sivikon Technologies
+                Building Solutions for the African Enterprise
               </h2>
               <p className="text-lg text-slate-700 leading-relaxed font-medium max-w-3xl">
-                Ensuring Quality. Delivering Trust. Building Innovation. Registered in 2024, Sivikon Technologies Limited is a premium provider of custom full-stack software engineering, end-to-end quality assurance, and advanced automated software testing services.
+                Ensuring efficiency, trust, and digital resilience. Registered in 2024, Sivikon Technologies Limited delivers custom full-stack software engineering, enterprise quality assurance, and automation for organizations scaling across East Africa.
               </p>
             </div>
 
@@ -35,12 +35,12 @@ export default function AboutSection() {
                 <p className="text-sm font-semibold text-slate-900">Sivikon Technologies Limited</p>
                 <p className="text-sm text-slate-600 mt-3">Email: <a href="mailto:sivikontechnologies@gmail.com" className="text-cyan-600 hover:text-cyan-700">sivikontechnologies@gmail.com</a></p>
                 <p className="text-sm text-slate-600">Phone: <a href="tel:+254721501604" className="text-cyan-600 hover:text-cyan-700">+254 721 501 604</a></p>
-                <p className="text-sm text-slate-600">Location: Kenya (Serving Global Markets)</p>
+                <p className="text-sm text-slate-600">Presence: Kenya, East Africa, and global partners</p>
               </div>
               <div className="rounded-3xl border border-white/50 bg-white/70 p-6 shadow-2xl backdrop-blur-xl">
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500 mb-3">Integrated Digital Solutions</p>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Custom full-stack software engineering, end-to-end quality assurance, and advanced automated software testing services for modern enterprises and teams scaling globally.
+                  Custom software engineering, end-to-end quality assurance, and automated testing for enterprise systems across education, healthcare, finance, government, and commerce.
                 </p>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function AboutSection() {
               <div className="rounded-3xl bg-emerald-950/95 border border-white/10 p-8">
                 <p className="text-sm uppercase tracking-widest text-emerald-300 mb-3">About Us</p>
                 <p className="text-slate-200 leading-relaxed">
-                  Founded by seasoned software design visionaries and expert QA engineers, Sivikon Technologies was registered in 2024 as a comprehensive software development and premier quality assurance provider. We build high-performance digital ecosystems and deliver flawless product deployments that guarantee reliability, scalability, and absolute user satisfaction.
+                  Founded by seasoned software architects and QA specialists, Sivikon Technologies is a fast-growing enterprise partner for digital transformation. We build high-performance systems that deliver reliability, regional compliance, and measurable business results.
                 </p>
               </div>
               <div className="rounded-3xl bg-slate-100 border border-slate-200 p-8">

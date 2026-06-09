@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function CapabilitiesGrid() {
-  const [expandedCard, setExpandedCard] = useState(null);
-  const [showAllCards, setShowAllCards] = useState(false);
 
   const capabilities = [
     {
@@ -39,7 +37,7 @@ export default function CapabilitiesGrid() {
     }
   ];
 
-  const displayedCapabilities = showAllCards ? capabilities : capabilities.slice(0, 1);
+  const displayedCapabilities = capabilities;
 
   return (
     <section id="services-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
@@ -68,8 +66,7 @@ export default function CapabilitiesGrid() {
           {displayedCapabilities.map((cap, idx) => (
             <div 
               key={idx} 
-              className="group relative bg-gradient-to-br from-slate-800/50 to-blue-900/50 border border-white/10 hover:border-white/30 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 backdrop-blur-xl shadow-2xl hover:shadow-cyan-500/20 cursor-pointer"
-              onClick={() => setExpandedCard(expandedCard === idx ? null : idx)}
+              className="group relative bg-gradient-to-br from-slate-800/50 to-emerald-950/20 border border-white/10 hover:border-white/30 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 backdrop-blur-xl shadow-2xl hover:shadow-emerald-500/20"
             >
               <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 {cap.icon}
@@ -106,26 +103,6 @@ export default function CapabilitiesGrid() {
             </div>
           ))}
         </div>
-
-        <div className="flex justify-center">
-          {!showAllCards && (
-            <button 
-              onClick={() => setShowAllCards(true)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50"
-            >
-              View All Services ↓
-            </button>
-          )}
-          {showAllCards && (
-            <button 
-              onClick={() => setShowAllCards(false)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-bold py-3 px-8 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-cyan-500/50"
-            >
-              Show Less ↑
-            </button>
-          )}
-        </div>
-
       </div>
     </section>
   );

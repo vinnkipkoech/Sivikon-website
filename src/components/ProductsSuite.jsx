@@ -3,20 +3,28 @@ import React from 'react';
 export default function ProductsSuite() {
   const productPlatforms = [
     {
-      title: 'Advanced Recruitment Management Information System',
-      description: 'Centralized candidate lifecycle, verifications, and placement workflows for large organizations.'
+      title: 'School Management System',
+      description: 'A complete platform for student records, timetable planning, fees, exams, and parent engagement.'
     },
     {
-      title: 'E-Learning Management System',
-      description: 'Adaptive online training portal with assessments, certification and content delivery for institutions.'
+      title: 'Hospital & Clinic Management',
+      description: 'Patient records, billing, pharmacy, and outpatient workflows built for healthcare operators.'
     },
     {
-      title: 'Internship Management Information System',
-      description: 'Streamlined onboarding, placement, monitoring, and reporting for internship and training programs.'
+      title: 'NGO Project Tracking System',
+      description: 'Donor management, impact reporting, beneficiary tracking and grant compliance for NGOs.'
     },
     {
-      title: 'POS Integrated With Bar-Code Scanner',
-      description: 'Retail POS platform with real-time inventory, payments, and barcode-driven checkout workflows.'
+      title: 'SACCO & Microfinance Platform',
+      description: 'Member accounting, loan processing, savings management, and compliance reporting for financial cooperatives.'
+    },
+    {
+      title: 'HR & Payroll System',
+      description: 'Workforce automation with payroll, leave, performance, and employee self-service capabilities.'
+    },
+    {
+      title: 'Hotel & Hospitality Management',
+      description: 'Reservations, front desk, housekeeping, and guest services for hotels and lodges.'
     }
   ];
 
@@ -59,7 +67,7 @@ export default function ProductsSuite() {
             Solutions & Platforms for Enterprise Growth
           </h2>
           <p className="text-lg md:text-xl text-slate-300 mt-6 leading-relaxed max-w-2xl mx-auto">
-            From recruitment, e-learning, and internship management to high-performance point-of-sale and mission-critical sector systems, our products support business transformation and scale.
+            Enterprise-ready systems for education, healthcare, finance, NGOs, hospitality and public sector modernization — built for African markets and high-growth operations.
           </p>
         </div>
 
