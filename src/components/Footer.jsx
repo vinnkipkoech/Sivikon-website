@@ -2,10 +2,10 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-slate-900 to-slate-950 border-t border-white/10 text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-r from-cyan-950 via-emerald-950 to-amber-900 border-t border-white/10 text-white overflow-hidden">
       
       {/* Accent Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff_0.75px,transparent_1px)] [background-size:32px_32px] opacity-10 pointer-events-none" />
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

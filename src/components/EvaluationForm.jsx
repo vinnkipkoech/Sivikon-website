@@ -68,11 +68,20 @@ export default function EvaluationForm() {
 
           <div>
             <h2 className="text-5xl font-black text-white tracking-tight uppercase leading-tight mb-6">
-              Let's Transform Your Business
+              Request Your Custom Solution
             </h2>
             <p className="text-lg text-slate-300 leading-relaxed mb-8">
-              Ready to accelerate your digital transformation? Fill out this form and our team will review your requirements and reach out within 24 hours with a customized proposal.
+              Describe your business goals and requirements, and our team will send a custom proposal with timelines, technology fit, and pricing.
             </p>
+          </div>
+
+          <div className="rounded-3xl border border-emerald-500/20 bg-white/10 p-6 text-slate-200">
+            <h3 className="text-lg font-black text-white uppercase tracking-tight mb-4">How to Request</h3>
+            <ol className="space-y-3 text-sm leading-relaxed text-slate-300">
+              <li>1. Choose the solution track that best fits your project.</li>
+              <li>2. Provide your core business requirements and timeline.</li>
+              <li>3. Receive a tailored proposal and next steps within 24 business hours.</li>
+            </ol>
           </div>
 
           {/* Benefits List */}
@@ -258,9 +267,9 @@ export default function EvaluationForm() {
                 <button 
                   type="submit" 
                   disabled={status === 'loading'}
-                  className="w-full bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-sm py-4 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50 disabled:cursor-not-allowed disabled:opacity-70"
+                  className="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold text-sm py-4 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg shadow-amber-300/50 disabled:cursor-not-allowed disabled:opacity-70"
                 >
-                  {status === 'loading' ? 'SUBMITTING...' : 'SUBMIT REQUEST ➔'}
+                  {status === 'loading' ? 'SENDING REQUEST...' : 'REQUEST CUSTOM SOLUTION'}
                 </button>
 
                 <p className="text-xs text-slate-400 text-center">

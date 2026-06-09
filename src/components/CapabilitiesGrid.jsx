@@ -41,13 +41,13 @@ export default function CapabilitiesGrid() {
 
   return (
     <section id="services-section" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-emerald-950 to-slate-900" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 via-emerald-100 to-amber-100" />
       <div className="absolute inset-0 opacity-20" style={{
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="techgrid" width="60" height="60" patternUnits="userSpaceOnUse"><rect width="60" height="60" fill="none" stroke="rgba(16,185,129,0.3)" stroke-width="0.5"/><circle cx="10" cy="10" r="1.5" fill="rgba(16,185,129,0.5)"/><circle cx="50" cy="50" r="1.5" fill="rgba(16,185,129,0.5)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23techgrid)"/></svg>')`,
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60"><defs><pattern id="techgrid" width="60" height="60" patternUnits="userSpaceOnUse"><rect width="60" height="60" fill="none" stroke="rgba(16,185,129,0.18)" stroke-width="0.5"/><circle cx="10" cy="10" r="1.5" fill="rgba(16,185,129,0.22)"/><circle cx="50" cy="50" r="1.5" fill="rgba(16,185,129,0.22)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23techgrid)"/></svg>')`,
         backgroundSize: '60px 60px'
       }} />
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-amber-200/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="max-w-3xl mb-20">
@@ -66,40 +66,40 @@ export default function CapabilitiesGrid() {
           {displayedCapabilities.map((cap, idx) => (
             <div 
               key={idx} 
-              className="group relative bg-gradient-to-br from-slate-800/50 to-emerald-950/20 border border-white/10 hover:border-white/30 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 backdrop-blur-xl shadow-2xl hover:shadow-emerald-500/20"
+              className="group relative bg-white/90 border border-slate-200 p-8 rounded-3xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 shadow-2xl shadow-amber-200/40"
             >
               <div className="text-5xl mb-6 transform group-hover:scale-110 transition-transform duration-300">
                 {cap.icon}
               </div>
 
-              <div className="absolute top-4 right-4 text-xs font-bold text-cyan-400 opacity-50 group-hover:opacity-100 transition-opacity">
+              <div className="absolute top-4 right-4 text-xs font-bold text-amber-600 opacity-70 group-hover:opacity-100 transition-opacity">
                 {cap.index}
               </div>
 
               <div className="space-y-4 flex-grow">
-                <h3 className="text-xl font-black text-white uppercase tracking-tight">
+                <h3 className="text-xl font-black text-slate-900 uppercase tracking-tight">
                   {cap.title}
                 </h3>
-                <p className="text-sm text-slate-300 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {cap.desc}
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-white/10">
-                <p className="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-4">
+              <div className="pt-6 mt-6 border-t border-slate-200">
+                <p className="text-xs font-bold text-amber-700 uppercase tracking-widest mb-4">
                   Core Technologies
                 </p>
                 <ul className="space-y-2.5">
                   {cap.tech.map((item, tIdx) => (
-                    <li key={tIdx} className="flex items-center gap-2.5 text-sm text-slate-200">
-                      <span className="w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full shadow-lg shadow-cyan-400/50" />
+                    <li key={tIdx} className="flex items-center gap-2.5 text-sm text-slate-700">
+                      <span className="w-2 h-2 bg-amber-500 rounded-full shadow-lg shadow-amber-200/60" />
                       {item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-cyan-500/10 via-transparent to-transparent" />
+              <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-amber-100/60 via-transparent to-transparent" />
             </div>
           ))}
         </div>

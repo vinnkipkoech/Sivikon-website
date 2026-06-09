@@ -1,126 +1,125 @@
 import React from 'react';
 
 export default function ProductsSuite() {
-  const productPlatforms = [
+  const solutions = [
     {
+      icon: '🎓',
       title: 'School Management System',
-      description: 'A complete platform for student records, timetable planning, fees, exams, and parent engagement.'
+      description: 'A complete digital campus solution for student records, scheduling, fees, exams, and parent communication.'
     },
     {
+      icon: '🏥',
       title: 'Hospital & Clinic Management',
-      description: 'Patient records, billing, pharmacy, and outpatient workflows built for healthcare operators.'
+      description: 'Integrated patient care, billing, pharmacy, and clinical workflows for hospitals and clinics.'
     },
     {
-      title: 'NGO Project Tracking System',
-      description: 'Donor management, impact reporting, beneficiary tracking and grant compliance for NGOs.'
+      icon: '🤝',
+      title: 'NGO Project Tracking',
+      description: 'Donor management, beneficiary tracking, project reporting, and impact analytics for NGOs.'
     },
     {
+      icon: '💰',
       title: 'SACCO & Microfinance Platform',
-      description: 'Member accounting, loan processing, savings management, and compliance reporting for financial cooperatives.'
+      description: 'Member accounts, loan management, savings tracking, and compliance dashboard for cooperatives.'
     },
     {
+      icon: '👥',
       title: 'HR & Payroll System',
-      description: 'Workforce automation with payroll, leave, performance, and employee self-service capabilities.'
+      description: 'Automated payroll, leave management, performance tracking, and employee self-service tools.'
     },
     {
+      icon: '🏨',
       title: 'Hotel & Hospitality Management',
-      description: 'Reservations, front desk, housekeeping, and guest services for hotels and lodges.'
+      description: 'Bookings, reservations, housekeeping, front-desk operations and guest services for hotels and lodges.'
+    },
+    {
+      icon: '🏛️',
+      title: 'Government Service Automation',
+      description: 'Citizen portals, document workflows, permits, and public service delivery systems for government agencies.'
+    },
+    {
+      icon: '🛒',
+      title: 'Retail & E-commerce Platform',
+      description: 'Inventory, POS, online storefronts, and order fulfillment systems for retail businesses.'
+    },
+    {
+      icon: '📡',
+      title: 'Telecom Operations & Billing',
+      description: 'Customer management, service provisioning, billing, and analytics for telecom operators.'
     }
   ];
 
-  const enterpriseClients = [
-    {
-      title: 'ABSA Bank Group',
-      description: 'High-security payment integrations and core system testing for banking operations.',
-      impact: 'Reduced transaction risk, improved audit visibility, and stronger regulatory compliance.'
-    },
-    {
-      title: 'MTECH Communications',
-      description: 'Mobile platform scaling, API optimization, and customer engagement engineering.',
-      impact: 'Higher reliability, lower latency, and improved digital service performance.'
-    },
-    {
-      title: 'Housing Finance Company (HFC)',
-      description: 'Secure loan routing pipelines and transactional portals for financial services.',
-      impact: 'Faster processing, better compliance, and a seamless borrower experience.'
-    },
-    {
-      title: 'County Government of Kericho',
-      description: 'Public-service automation, records consolidation, and citizen service delivery.',
-      impact: 'Improved civic operations, centralized data workflows, and more efficient government services.'
-    }
+  const requestSteps = [
+    'Schedule a consultation with our enterprise team.',
+    'Share your vision, systems, and growth goals.',
+    'Receive a tailored proposal and implementation plan.',
+    'Launch a custom system built for your organization.'
   ];
 
   return (
-    <section id="products-suite" className="relative py-32 px-4 sm:px-6 lg:px-8 text-white overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950" />
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.08),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(#1e3a8a_1px,transparent_1px)] [background-size:32px_32px] opacity-15 pointer-events-none" />
+    <section id="products-suite" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-100 via-emerald-100 to-amber-100" />
+      <div className="absolute left-0 top-12 h-80 w-80 rounded-full bg-cyan-300/20 blur-3xl pointer-events-none" />
+      <div className="absolute right-0 bottom-0 h-96 w-96 rounded-full bg-amber-300/20 blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(16,185,129,0.12),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(251,191,36,0.12),transparent_35%)] opacity-80 pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-cyan-400 uppercase bg-cyan-500/10 border border-cyan-500/30 px-4 py-2 rounded-full backdrop-blur-sm">
-            PRODUCT PLATFORMS
+          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-amber-700 uppercase bg-amber-100 border border-amber-300 px-4 py-2 rounded-full shadow-sm">
+            CUSTOM SOFTWARE SOLUTIONS
           </div>
-          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-white mt-6 uppercase leading-tight">
-            Solutions & Platforms for Enterprise Growth
+          <h2 className="text-5xl md:text-6xl font-black tracking-tight text-slate-900 mt-6 uppercase leading-tight">
+            All Custom Systems Featured in One Place
           </h2>
-          <p className="text-lg md:text-xl text-slate-300 mt-6 leading-relaxed max-w-2xl mx-auto">
-            Enterprise-ready systems for education, healthcare, finance, NGOs, hospitality and public sector modernization — built for African markets and high-growth operations.
+          <p className="text-lg md:text-xl text-slate-700 mt-6 leading-relaxed max-w-2xl mx-auto">
+            Explore the full suite of enterprise-grade software solutions built for African organizations. Request a tailored system instantly by using the form below.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          <div className="space-y-6">
-            {productPlatforms.map((product, idx) => (
-              <div key={idx} className="rounded-3xl border border-white/10 bg-slate-950/85 p-8 shadow-lg shadow-cyan-500/5 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/20">
-                <div className="text-xs uppercase tracking-widest text-cyan-300 mb-3">Product {String(idx + 1).padStart(2, '0')}</div>
-                <h3 className="text-2xl font-black text-white mb-4">{product.title}</h3>
-                <p className="text-slate-300 leading-relaxed">{product.description}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="space-y-6">
-            {enterpriseClients.map((client, idx) => (
-              <div key={idx} className="relative overflow-hidden rounded-3xl border border-white/10 bg-slate-950/90 p-8 shadow-2xl shadow-cyan-500/10 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute -left-10 top-0 h-40 w-40 rounded-full bg-cyan-500/15 blur-3xl" />
-                <div className="relative space-y-5">
-                  <div className="text-sm uppercase tracking-widest text-cyan-400 font-bold">Client {String(idx + 1).padStart(2, '0')}</div>
-                  <h3 className="text-2xl font-black text-white tracking-tight">{client.title}</h3>
-                  <p className="text-slate-300 leading-relaxed">{client.description}</p>
-                  <div className="rounded-2xl bg-slate-900/80 border border-white/10 p-5">
-                    <p className="text-xs uppercase tracking-widest text-slate-400 mb-2">Impact Delivered</p>
-                    <p className="text-slate-200 leading-relaxed">{client.impact}</p>
-                  </div>
+        <div className="grid gap-8 xl:grid-cols-[2fr_1fr] items-start">
+          <div className="grid gap-6 md:grid-cols-2">
+            {solutions.map((solution, idx) => (
+              <div key={idx} className="rounded-3xl border border-amber-200 bg-white/90 p-8 shadow-lg shadow-amber-200/30 transition-all duration-300 hover:-translate-y-1">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-2xl shadow-inner shadow-amber-200/60 mb-4">
+                  {solution.icon}
                 </div>
+                <h3 className="text-xl font-black text-slate-900 mb-3">{solution.title}</h3>
+                <p className="text-slate-600 leading-relaxed mb-6">{solution.description}</p>
+                <a
+                  href="#evaluation-form"
+                  className="inline-flex items-center gap-2 text-sm font-bold text-amber-800 hover:text-amber-900"
+                >
+                  Request This Solution
+                  <span className="text-amber-500">→</span>
+                </a>
               </div>
             ))}
           </div>
-        </div>
 
-        <div className="bg-gradient-to-r from-emerald-950/30 to-teal-950/30 border border-white/10 rounded-3xl p-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300 mb-3">Modern Delivery</p>
-              <p className="text-slate-300 leading-relaxed">
-                We combine custom development, quality assurance, and cloud operations to deliver enterprise-ready systems on time and within scope.
-              </p>
+          <aside className="rounded-[3rem] border border-cyan-200/80 bg-white/90 p-10 shadow-2xl shadow-cyan-200/20">
+            <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-cyan-700 uppercase bg-cyan-100 border border-cyan-200 px-4 py-2 rounded-full mb-6">
+              HOW TO REQUEST
             </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300 mb-3">Security & Compliance</p>
-              <p className="text-slate-300 leading-relaxed">
-                Every product is built with strong security principles, audit readiness, and compliance best practices.
-              </p>
+            <h3 className="text-4xl font-black text-slate-900 leading-tight mb-6">
+              Start your custom software request
+            </h3>
+            <div className="space-y-4 mb-8">
+              {requestSteps.map((step, idx) => (
+                <div key={idx} className="flex gap-4 rounded-3xl border border-slate-200 bg-slate-50 p-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-amber-200 text-sm font-black text-amber-900">
+                    {idx + 1}
+                  </div>
+                  <p className="text-sm text-slate-700 leading-relaxed">{step}</p>
+                </div>
+              ))}
             </div>
-            <div>
-              <p className="text-xs uppercase tracking-widest text-cyan-300 mb-3">Global Reach</p>
-              <p className="text-slate-300 leading-relaxed">
-                Based in Kenya and serving global organizations, our solutions align with both local regulations and international standards.
-              </p>
-            </div>
-          </div>
+            <a
+              href="#evaluation-form"
+              className="inline-flex items-center justify-center w-full rounded-3xl bg-gradient-to-r from-amber-500 to-amber-600 px-6 py-4 text-sm font-bold uppercase tracking-widest text-slate-950 shadow-lg shadow-amber-300/30 hover:from-amber-400 hover:to-amber-500 transition-all duration-200"
+            >
+              Request a Custom Solution
+            </a>
+          </aside>
         </div>
       </div>
     </section>

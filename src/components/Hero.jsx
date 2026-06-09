@@ -3,9 +3,9 @@ import React from 'react';
 export default function Hero() {
   return (
     <section id="hero" className="relative pt-52 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden text-left">
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-emerald-950 to-slate-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-700 via-emerald-600 to-amber-400" />
       <div className="absolute inset-0 opacity-30" style={{
-        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(16,185,129,0.25)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>')`,
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>')`,
         backgroundSize: '100px 100px'
       }} />
 
@@ -64,15 +64,15 @@ export default function Hero() {
           <div className="pt-6 flex flex-col sm:flex-row gap-4">
             <a
               href="#evaluation-form"
-              className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white font-bold text-sm px-8 py-4 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-emerald-500/50 text-center"
+              className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-slate-950 font-bold text-sm px-8 py-4 rounded-lg uppercase tracking-widest transition-all duration-200 transform hover:scale-105 shadow-lg shadow-amber-300/50 text-center"
             >
-              Book a Consultation ➔
+              Request Custom Solution ➔
             </a>
             <a
-              href="#portfolio-section"
-              className="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-8 py-4 rounded-lg text-sm uppercase tracking-widest transition-all duration-200 backdrop-blur-sm text-center"
+              href="#products-suite"
+              className="bg-white/90 text-slate-950 border border-slate-200 font-bold px-8 py-4 rounded-lg text-sm uppercase tracking-widest transition-all duration-200 backdrop-blur-sm text-center"
             >
-              Explore Projects
+              View All Solutions
             </a>
           </div>
 
