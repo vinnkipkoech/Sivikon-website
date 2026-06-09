@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-canvasDark text-white flex flex-col antialiased selection:bg-primary-500/30 selection:text-white">
+    <div className="min-h-screen bg-[#0b0f19] text-white flex flex-col antialiased selection:bg-emerald-500/30 selection:text-white">
       {/* Navigation Layer */}
       <Navbar />
       
