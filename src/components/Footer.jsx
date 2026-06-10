@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Footer() {
   return (
     <footer className="relative bg-[#0A1628] border-t border-white/10 text-white overflow-hidden font-sans">

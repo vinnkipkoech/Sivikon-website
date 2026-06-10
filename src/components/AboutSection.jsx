@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function AboutSection() {
   const coreValues = [
     { title: "Quality First", desc: "An unyielding, zero-compromise dedication to modern programming standards and flawless software execution metrics." },

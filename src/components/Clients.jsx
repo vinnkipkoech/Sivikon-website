@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Clients() {
   const trustedClients = [
     { name: 'ABSA Bank Group', department: 'Payment Integration & QA Automation' },

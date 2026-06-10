@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Hero() {
   const solutionsList = [
     { icon: "🌐", name: "Web Application Development", tag: "Full-Stack", iconBg: "#F0F5FF" },
