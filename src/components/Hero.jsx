@@ -84,23 +84,23 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Metrics Footer */}
+          {/* Upgraded & Standardized Metrics Footer */}
           <div className="pt-8 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-6">
             <div>
-              <div className="text-3xl font-black text-cyan-400">150+</div>
-              <div className="text-xs text-slate-400 mt-2">Projects Delivered</div>
+              <div className="text-3xl font-black text-cyan-400 uppercase tracking-tight">150+</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Projects Delivered</div>
             </div>
             <div>
-              <div className="text-3xl font-black text-indigo-400">125+</div>
-              <div className="text-xs text-slate-400 mt-2">Enterprise Clients</div>
+              <div className="text-3xl font-black text-indigo-400 uppercase tracking-tight">125+</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Enterprise Clients</div>
             </div>
             <div>
-              <div className="text-3xl font-black text-indigo-400">99.9%</div>
-              <div className="text-xs text-slate-400 mt-2">Uptime Guarantee</div>
+              <div className="text-3xl font-black text-cyan-400 uppercase tracking-tight">99.99%</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Uptime Target</div>
             </div>
             <div>
-              <div className="text-3xl font-black text-indigo-400">24/7</div>
-              <div className="text-xs text-slate-400 mt-2">Support Coverage</div>
+              <div className="text-3xl font-black text-indigo-400 uppercase tracking-tight">24/7</div>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Support Coverage</div>
             </div>
           </div>
         </div>

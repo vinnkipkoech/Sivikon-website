@@ -6,6 +6,7 @@ import CapabilitiesGrid from './components/CapabilitiesGrid';
 import ProductsSuite from './components/ProductsSuite';
 import PortfolioSection from './components/PortfolioSection';
 import SimpleBrowser from './components/SimpleBrowser';
+import ContactWizard from './components/ContactWizard'; // Integrated the project intake wizard
 import Footer from './components/Footer';
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
 
         {/* Case Studies Track */}
         <PortfolioSection />
+
+        {/* Interactive Qualification Layer */}
+        <ContactWizard />
       </main>
 
       {/* Global Context Footer Anchor */}

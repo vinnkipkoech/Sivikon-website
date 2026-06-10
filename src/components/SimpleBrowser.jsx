@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function TrustedSection() {
+export default function SimpleBrowser() {
   const trustedClients = [
-    'ABSA Bank Group',
-    'MTECH Communications',
-    'Housing Finance Company',
-    'County Government of Kericho',
-    'Redemptive Light Church',
-    'Kenya Urban Support Program'
+    { name: 'ABSA Bank Group', department: 'Payment Integration & QA' },
+    { name: 'MTECH Communications', department: 'API Infrastructure' },
+    { name: 'Housing Finance Company', department: 'Transactional Systems' },
+    { name: 'County Government of Kericho', department: 'Automation Systems' },
+    { name: 'Redemptive Light Church', department: 'Modern Platform Deployment' },
+    { name: 'Kenya Urban Support Program', department: 'Data Consolidation' }
   ];
 
   const industries = [
@@ -91,15 +91,18 @@ export default function TrustedSection() {
           </div>
         </div>
 
-        {/* Trusted Clients Corporate Badge Grid */}
+        {/* Upgraded Enterprise Monochrome Corporate Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-24">
           {trustedClients.map((client, idx) => (
             <div 
               key={idx} 
-              className="rounded-2xl border border-white/5 bg-[#121826]/60 py-5 px-6 text-center shadow-lg backdrop-blur-xl flex items-center justify-center min-h-[4.5rem] group hover:border-emerald-500/20 transition-all duration-300"
+              className="group relative rounded-2xl border border-white/5 bg-[#121826]/40 p-6 transition-all duration-300 hover:border-emerald-500/20 hover:bg-[#161e30]/60 shadow-lg backdrop-blur-xl flex flex-col justify-center min-h-[5.5rem]"
             >
-              <div className="text-sm font-bold tracking-wide text-slate-300 group-hover:text-white transition-colors">
-                {client}
+              <div className="text-sm font-black tracking-wide text-slate-400 group-hover:text-white transition-colors duration-200">
+                {client.name}
+              </div>
+              <div className="text-[10px] font-mono tracking-widest uppercase text-slate-600 group-hover:text-emerald-400/80 transition-colors duration-200 mt-1">
+                {client.department}
               </div>
             </div>
           ))}
@@ -125,7 +128,6 @@ export default function TrustedSection() {
                 </div>
               </div>
 
-              {/* Minimal internal glow hint on card hover */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-b from-emerald-500/5 to-transparent" />
             </div>
           ))}
