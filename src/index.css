@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  /* Register custom brand color tokens natively in v4 */
-  --color-navy: #091124;
-  --color-navy2: #0e1a34;
-  --color-blueCustom: #1558d6;
-  --color-blue2: #0f40a1;
-  --color-cyanCustom: #00f0ff; /* Added missing # */
+  /* Updated Brand Color Tokens for Light Corporate Theme */
+  --color-brand-primary: #1558d6;
+  --color-brand-secondary: #00c2ff;
+  --color-brand-slate: #0a1628;
+  --color-brand-light: #f0f5ff;
+  --color-brand-surface: #f8fafc;
 
-  /* Custom text-carousel keyframes for the Hero layout */
+  /* Retained keyframes for Hero layout animations */
   --animate-rotateWords: rotateWords 7.5s infinite ease-in-out;
 
   @keyframes rotateWords {
@@ -19,19 +19,19 @@
   }
 }
 
-/* Force global dark background canvas */
+/* Base layer updated for white canvas */
 @layer base {
   html, body, #root {
-    background-color: #091124 !important; /* Added missing # */
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #0a1628;
     margin: 0;
     padding: 0;
     min-height: 100vh;
   }
 }
 
-/* Custom background dot pattern utility */
+/* Custom background pattern utility */
 @utility hero-grid-bg {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(21, 88, 214, 0.05) 1px, transparent 1px);
   background-size: 24px 24px;
 }

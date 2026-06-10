@@ -11,10 +11,10 @@ export default function Clients() {
   ];
 
   const industries = [
-    { name: 'Government Systems', label: 'Citizen portals, departmental dashboards, and public service automation[cite: 1].' },
-    { name: 'Healthcare HMIS', label: 'Integrated patient records, clinical workflows, and secure medical billing[cite: 1].' },
-    { name: 'Financial Infrastructure', label: 'High-security transaction routing, core payment APIs, and compliance tools[cite: 1].' },
-    { name: 'Telecom & Corporate', label: 'Distributed API optimizations, message routing backbones, and fleet management[cite: 1].' }
+    { name: 'Government Systems', label: 'Citizen portals, departmental dashboards, and public service automation.' },
+    { name: 'Healthcare HMIS', label: 'Integrated patient records, clinical workflows, and secure medical billing.' },
+    { name: 'Financial Infrastructure', label: 'High-security transaction routing, core payment APIs, and compliance tools.' },
+    { name: 'Telecom & Corporate', label: 'Distributed API optimizations, message routing backbones, and fleet management.' }
   ];
 
   const testimonials = [
@@ -36,101 +36,92 @@ export default function Clients() {
   ];
 
   return (
-    <section id="clients" className="relative py-24 px-[5%] overflow-hidden text-left bg-navy border-t border-white/5">
-      
-      {/* Background Matrix Ambient Glow Layers */}
-      <div className="absolute top-1/4 right-[-5%] w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(21,88,214,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-[-5%] w-[450px] h-[450px] bg-[radial-gradient(circle,rgba(21,88,214,0.08)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute inset-0 opacity-[0.04] hero-grid-bg pointer-events-none" />
-
-      <div className="relative max-w-[1280px] mx-auto z-10">
+    <section id="clients" className="bg-[#F8FAFC] py-[90px] px-[5%] font-sans text-left border-t border-[#E2E8F4]">
+      <div className="max-w-[1200px] mx-auto">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <div className="inline-flex items-center gap-2 bg-blueCustom/20 border border-blueCustom/40 text-cyanCustom text-xs font-semibold tracking-[1.5px] uppercase px-4 py-1.5 rounded-full backdrop-blur-md">
-            💼 INDUSTRIES WE SERVE
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-6 uppercase leading-tight">
+        <div className="max-w-3xl mb-14">
+          <span className="inline-block text-[11.5px] font-bold tracking-[2px] uppercase text-[#1558D6] mb-3">
+            Industries We Serve
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0A1628] leading-[1.1] tracking-[-1.5px]">
             Built for High-Compliance Sectors
           </h2>
-          <p className="text-base text-white/60 mt-6 leading-relaxed max-w-2xl font-normal">
-            We deliver highly scalable enterprise solutions that organizations trust for mission-critical workflows, automated data normalization, and digital growth across core sectors[cite: 1].
+          <p className="text-sm sm:text-base text-[#6B7A99] mt-4 leading-[1.75] font-normal max-w-2xl">
+            We deliver highly scalable enterprise solutions that organizations trust for mission-critical workflows, automated data normalization, and digital growth across core sectors.
           </p>
         </div>
 
-        {/* Industries Core Layout Matrix */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+        {/* Industries Core Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-16">
           {industries.map((industry, idx) => (
             <div 
               key={idx} 
-              className="group rounded-xl border border-white/10 bg-white/5 p-6 shadow-2xl backdrop-blur-md transition-all duration-300 hover:border-cyanCustom/30 hover:-translate-y-1"
+              className="bg-white rounded-xl border border-[#E2E8F4] p-6 shadow-sm transition-all duration-300 hover:border-[#1558D6]/30 hover:shadow-md"
             >
-              <div className="text-xs uppercase tracking-widest text-cyanCustom font-bold mb-2 group-hover:text-white transition-colors font-mono">
+              <div className="font-mono text-[11px] font-bold uppercase tracking-widest text-[#1558D6] mb-2.5">
                 // {industry.name}
               </div>
-              <p className="text-xs md:text-sm text-white/60 font-normal leading-relaxed">
+              <p className="text-[13px] text-[#6B7A99] font-normal leading-relaxed">
                 {industry.label}
               </p>
             </div>
           ))}
         </div>
 
-        {/* Central Trust Banner Box */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <div className="rounded-2xl bg-navy2 border border-white/10 p-8 md:p-12 shadow-2xl backdrop-blur-md text-center group hover:border-cyanCustom/20 transition-colors duration-300">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-cyanCustom mb-4 font-mono">// PARTNERS IN DIGITAL TRANSFORMATION</p>
-            <h3 className="text-2xl font-black text-white uppercase tracking-tight">
+        {/* Strategic Focus Banner */}
+        <div className="max-w-4xl mx-auto mb-16">
+          <div className="rounded-2xl bg-[#0A1628] text-white p-8 md:p-10 shadow-xl text-center">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#00C2FF] mb-3 block">
+              // Partners in Digital Transformation
+            </span>
+            <h3 className="text-xl sm:text-2xl font-black tracking-tight mb-3">
               Enterprise Ecosystems Built for African Operations
             </h3>
-            <p className="text-xs md:text-sm text-white/60 mt-4 leading-relaxed max-w-xl mx-auto font-normal">
-              From automated regression engines to transactional customer web applications, we engineer stable architectures built around modern usability frameworks[cite: 1].
+            <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-2xl mx-auto font-normal">
+              From automated regression engines to transactional customer web applications, we engineer stable architectures built around modern usability frameworks.
             </p>
           </div>
         </div>
 
-        {/* Monochrome Enterprise Corporate Logo Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-20">
+        {/* Corporate Client Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 mb-16">
           {trustedClients.map((client, idx) => (
             <div 
               key={idx} 
-              className="group relative rounded-xl border border-white/10 bg-white/5 p-6 transition-all duration-300 hover:border-cyanCustom/30 hover:bg-white/[0.08] shadow-lg backdrop-blur-md flex flex-col justify-center min-h-[5.5rem]"
+              className="group bg-white rounded-xl border border-[#E2E8F4] p-5 transition-all duration-300 hover:border-[#1558D6]/30 hover:shadow-[0_4px_20px_rgba(21,88,214,0.05)] flex flex-col justify-center min-h-[84px]"
             >
-              <div className="text-sm font-bold tracking-wide text-white/80 group-hover:text-white transition-colors duration-200">
+              <div className="text-sm font-extrabold text-[#0A1628] group-hover:text-[#1558D6] transition-colors duration-200">
                 {client.name}
               </div>
-              <div className="text-[10px] font-mono tracking-widest uppercase text-white/40 group-hover:text-cyanCustom transition-colors duration-200 mt-1">
+              <div className="text-[10px] font-semibold font-mono tracking-wide uppercase text-[#6B7A99] mt-1">
                 {client.department}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Testimonials Feed Slider Hub */}
+        {/* Testimonials */}
         <div className="grid gap-6 lg:grid-cols-3">
           {testimonials.map((item, idx) => (
             <div 
               key={idx} 
-              className="group relative rounded-2xl border border-white/10 bg-white/5 p-8 shadow-2xl backdrop-blur-md flex flex-col justify-between transition-all duration-300 hover:border-cyanCustom/20"
+              className="bg-white rounded-2xl border border-[#E2E8F4] p-8 shadow-sm flex flex-col justify-between transition-all duration-300 hover:border-[#1558D6]/20"
             >
-              <p className="text-xs md:text-sm text-white/70 leading-relaxed font-normal italic">
+              <p className="text-sm text-[#6B7A99] leading-relaxed font-normal italic">
                 “{item.quote}”
               </p>
-              
-              <div className="mt-8 pt-5 border-t border-white/10">
-                <div className="text-sm font-black tracking-tight text-white uppercase">
+              <div className="mt-6 pt-4 border-t border-[#F0F5FF]">
+                <div className="text-sm font-extrabold text-[#0A1628]">
                   {item.name}
                 </div>
-                <div className="text-[10px] font-bold uppercase tracking-widest text-cyanCustom mt-1.5 font-mono">
+                <div className="text-[10.5px] font-bold uppercase tracking-wider text-[#1558D6] mt-1 font-mono">
                   {item.title}
                 </div>
               </div>
-
-              {/* Top Linear Hover Overlay */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-b from-blueCustom/5 to-transparent" />
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

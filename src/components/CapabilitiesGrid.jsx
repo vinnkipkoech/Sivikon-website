@@ -1,91 +1,102 @@
 import React from 'react';
 
+const coreCapabilities = [
+  {
+    icon: '🌐',
+    title: 'Web Application Development',
+    desc: 'Single-page applications, complex portals, and reactive front-ends with cross-device rendering, fluid animations, and SEO-optimized components.',
+    tags: ['React.js', 'JavaScript ES6+', 'Tailwind CSS', 'HTML5']
+  },
+  {
+    icon: '⚙️',
+    title: 'Backend, APIs & Cloud',
+    desc: 'High-throughput async microservices, RESTful and GraphQL APIs with secure JWT token verification and automated middleware layers.',
+    tags: ['Node.js', 'Express.js', 'RESTful APIs', 'JWT Auth']
+  },
+  {
+    icon: '🗄️',
+    title: 'Database & Fleet Systems',
+    desc: 'Fault-tolerant storage with high indexing speeds, real-time analytics pipelines, and car fleet management platform integrations.',
+    tags: ['MongoDB', 'PostgreSQL', 'Mongoose ODM', 'Aggregations']
+  },
+  {
+    icon: '🧪',
+    title: 'QA & Automated Testing',
+    desc: 'Self-healing automation systems for scalable parallel execution, regression cycles, and microservice schema enforcement with endpoint contract checks.',
+    tags: ['Selenium', 'Playwright', 'Cypress', 'Postman']
+  },
+  {
+    icon: '📱',
+    title: 'Mobile Testing',
+    desc: 'Comprehensive layout and functionality validation for iOS, Android, and hybrid systems across distinct engine builds and resolutions.',
+    tags: ['Appium', 'Espresso', 'XCUITest', 'Detox']
+  },
+  {
+    icon: '🛡️',
+    title: 'Performance & Security',
+    desc: 'Rigorous load testing, high-stress endurance runs, proactive vulnerability scans, credential leakage mapping, and penetration path audits.',
+    tags: ['JMeter', 'K6', 'SonarQube', 'OWASP']
+  }
+];
+
 export default function CapabilitiesGrid() {
-
-  const capabilities = [
-    {
-      index: "01",
-      title: "Web Application Development",
-      desc: "We architect single-page applications, reactive front-ends and fluid digital experiences using modern styling frameworks and performance-first components.",
-      tech: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "HTML5 / CSS3 Grid"]
-    },
-    {
-      index: "02",
-      title: "Backend, APIs & Cloud Infrastructure",
-      desc: "We craft high-throughput microservices, secure RESTful and GraphQL interfaces, and resilient cloud architectures with middleware and token-based authentication.",
-      tech: ["Node.js", "Express.js", "RESTful APIs", "JWT Auth Middleware"]
-    },
-    {
-      index: "03",
-      title: "Database Systems & Fleet Integrations",
-      desc: "Our teams deploy fault-tolerant databases, real-time analytics, and fleet integration pipelines built for high indexing speeds and transaction compliance.",
-      tech: ["MongoDB", "Mongoose ODM", "PostgreSQL", "Data Aggregations"]
-    },
-    {
-      index: "04",
-      title: "Quality Assurance & Testing",
-      desc: "We deliver automated and manual testing services that validate application layers, pinpoint performance bottlenecks, and prevent production defects.",
-      tech: ["Selenium", "Playwright", "Cypress", "JMeter"]
-    }
-  ];
-
   return (
-    <section id="solutions" className="relative py-24 px-[5%] overflow-hidden text-left bg-navy border-t border-white/5">
-      <div className="absolute inset-0 opacity-[0.03] hero-grid-bg pointer-events-none" />
-      <div className="absolute top-1/3 right-[-10%] w-96 h-96 bg-[radial-gradient(circle,rgba(21,88,214,0.15)_0%,transparent_70%)] pointer-events-none" />
-      <div className="absolute bottom-0 left-[-5%] w-96 h-96 bg-[radial-gradient(circle,rgba(0,194,255,0.1)_0%,transparent_70%)] pointer-events-none" />
-
-      <div className="relative max-w-7xl mx-auto z-10">
+    <section id="capabilities" className="bg-white py-[90px] px-[5%] font-sans text-left border-t border-[#E2E8F4]">
+      <div className="max-w-[1200px] mx-auto">
         
-        <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center gap-2 bg-blueCustom/20 border border-blueCustom/40 text-cyanCustom text-xs font-semibold tracking-[1.5px] uppercase px-4 py-1.5 rounded-full">
-            ⚙️ CORE CAPABILITIES
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end mb-14 gap-5">
+          <div>
+            <span className="inline-block text-[11.5px] font-bold tracking-[2px] uppercase text-[#1558D6] mb-3">
+              Core Capabilities
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0A1628] leading-[1.1] tracking-[-1.5px]">
+              Built for Speed,<br />
+              <span className="text-[#1558D6]">Scale & Security</span>
+            </h2>
           </div>
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white mt-6 uppercase leading-tight">
-            Engineering Excellence Across <span className="bg-gradient-to-r from-cyanCustom to-blue2 bg-clip-text text-transparent">All Domains</span>
-          </h2>
-          <p className="text-base md:text-lg text-white/60 mt-4 leading-relaxed max-w-2xl font-normal">
-            Our specialized delivery tracks bring structural reliability, rapid scaling, and innovation to your enterprise digital platforms.
+          <p className="text-sm sm:text-base text-[#6B7A99] max-w-[460px] leading-[1.75] font-normal">
+            We build custom web, mobile, and backend cloud architectures engineered for elite performance, long-term scalability, and strict security compliance.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          {capabilities.map((cap, idx) => (
+        {/* 6-Card Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {coreCapabilities.map((item, index) => (
             <div 
-              key={idx} 
-              className="group relative bg-white/5 border border-white/10 p-8 rounded-2xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1.5 hover:border-cyanCustom/30 shadow-2xl backdrop-blur-md"
+              key={index} 
+              className="group relative bg-white border border-[#E2E8F4] rounded-2xl p-8 transition-all duration-300 hover:border-[#1558D6]/30 hover:shadow-[0_8px_32px_rgba(21,88,214,0.08)] overflow-hidden flex flex-col justify-between"
             >
-              <div className="absolute top-6 right-8 text-xs font-mono font-bold text-white/30 group-hover:text-cyanCustom transition-colors">
-                // {cap.index}
-              </div>
-
-              <div className="space-y-4 flex-grow">
-                <h3 className="text-xl font-black text-white uppercase tracking-tight pt-2">
-                  {cap.title}
-                </h3>
-                <p className="text-sm text-white/70 leading-relaxed font-normal">
-                  {cap.desc}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-white/5">
-                <p className="text-[11px] font-bold text-cyanCustom uppercase tracking-widest mb-4">
-                  Core Technologies
-                </p>
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
-                  {cap.tech.map((item, tIdx) => (
-                    <div key={tIdx} className="flex items-center gap-2.5 text-sm text-white/80">
-                      <span className="w-1.5 h-1.5 bg-blueCustom rounded-full group-hover:bg-cyanCustom group-hover:scale-125 transition-all duration-300" />
-                      {item}
-                    </div>
-                  ))}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#1558D6] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <div>
+                <div className="w-12 h-12 rounded-xl bg-[#F0F5FF] flex items-center justify-center text-xl mb-5 shrink-0">
+                  {item.icon}
                 </div>
+                
+                <h3 className="text-lg font-extrabold text-[#0A1628] mb-2.5">
+                  {item.title}
+                </h3>
+                
+                <p className="text-[13.5px] text-[#6B7A99] leading-relaxed mb-6 font-normal">
+                  {item.desc}
+                </p>
               </div>
 
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-gradient-to-br from-cyanCustom/5 via-transparent to-transparent" />
+              <div className="flex flex-wrap gap-1.5 pt-4 border-t border-[#F0F5FF]">
+                {item.tags.map((tag, i) => (
+                  <span 
+                    key={i} 
+                    className="text-[11px] font-semibold font-mono px-2.5 py-1 rounded bg-[#F0F5FF] text-[#1558D6] border border-[#E2E8F4]/60"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

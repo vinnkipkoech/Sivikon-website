@@ -3,20 +3,20 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import CapabilitiesGrid from './components/CapabilitiesGrid';
-import Clients from './components/Clients';               // Refactored from SimpleBrowser
-import Solutions from './components/Solutions';           // Refactored from ProductsSuite
+import Clients from './components/Clients';               
+import Solutions from './components/Solutions';           
 import PortfolioSection from './components/PortfolioSection';
-import ContactWizard from './components/ContactWizard';   // Core intake wizard (#cta)
+import ContactWizard from './components/ContactWizard';   
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-navy text-white flex flex-col antialiased selection:bg-blueCustom/30 selection:text-cyanCustom">
+    <div className="min-h-screen bg-white text-[#0A1628] flex flex-col antialiased selection:bg-[#1558D6]/10 selection:text-[#1558D6]">
       {/* Navigation Layer */}
       <Navbar />
       
       {/* Structured Content Architecture */}
-      <main className="flex-grow">
+      <main className="flex-grow pt-[74px]">
         {/* Main Entry View */}
         <Hero />
 

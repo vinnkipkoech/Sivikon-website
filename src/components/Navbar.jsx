@@ -5,10 +5,10 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Monitor scroll for clean header contrast updates
+  // Monitor scroll for clean header drop shadows
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 40);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -34,68 +34,68 @@ export default function Navbar() {
     setOpenDropdown(null);
   };
 
-  // Explicitly mapped solution parameters from template profile
+  // Explicitly mapped solution parameters from corporate blueprint
   const solutionsList = [
-    { name: "Web Application Development", href: "#solutions" },
-    { name: "Automated QA & Testing", href: "#solutions" },
-    { name: "Cloud & API Infrastructure", href: "#solutions" },
-    { name: "Database & Fleet Systems", href: "#solutions" },
-    { name: "Mobile App Testing", href: "#solutions" },
-    { name: "Security & Penetration Testing", href: "#solutions" },
+    { name: "Web Application Development", href: "#capabilities" },
+    { name: "Backend, APIs & Cloud Systems", href: "#capabilities" },
+    { name: "Database & Fleet Integrations", href: "#capabilities" },
+    { name: "QA & Automated Testing Services", href: "#capabilities" },
+    { name: "Mobile App Layout Validation", href: "#capabilities" },
+    { name: "Performance & Security Audits", href: "#capabilities" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[999]">
+    <nav className="fixed top-0 left-0 right-0 z-[999] font-sans">
       {/* ── TOP INFORMATIONAL BANNER ── */}
-      <div className="hidden md:flex items-center justify-between px-[5%] py-2 text-xs text-white/55 bg-navy border-b border-white/5 backdrop-blur-md">
+      <div className="hidden md:flex items-center justify-between px-[5%] py-2 text-xs text-white bg-[#0A1628]">
         <div className="flex flex-wrap items-center gap-6 font-medium">
-          <a href="tel:+254721501604" className="hover:text-cyanCustom transition-colors flex items-center gap-1.5">
+          <a href="tel:+254721501604" className="hover:text-[#00C2FF] transition-colors flex items-center gap-1.5">
             📞 +254 721 501 604
           </a>
-          <a href="mailto:sivikontechnologies@gmail.com" className="hover:text-cyanCustom transition-colors flex items-center gap-1.5">
+          <a href="mailto:sivikontechnologies@gmail.com" className="hover:text-[#00C2FF] transition-colors flex items-center gap-1.5">
             ✉️ sivikontechnologies@gmail.com
           </a>
         </div>
-        <div className="font-medium text-white/40">Nairobi, Kenya — Serving Global Markets</div>
+        <div className="font-medium text-white/50 tracking-wide">Nairobi, Kenya — Serving Global Markets</div>
       </div>
 
       {/* ── MAIN NAVIGATION BAR ── */}
-      <div className={`h-[70px] px-[5%] flex items-center justify-between transition-all duration-200 border-b border-white/5 backdrop-blur-md ${scrolled ? 'bg-navy/95 shadow-lg' : 'bg-navy/90'}`}>
+      <div className={`h-[74px] px-[5%] flex items-center justify-between transition-all duration-200 border-b border-[#E2E8F4] bg-white/95 backdrop-blur-md ${scrolled ? 'shadow-md h-[70px]' : ''}`}>
         
         {/* Logo Branding Vector */}
         <a href="#hero" className="flex items-center gap-2.5 no-underline group">
-          <div className="w-[38px] h-[38px] bg-gradient-to-br from-blueCustom to-cyanCustom rounded-xl flex items-center justify-center font-black text-white text-lg tracking-tighter group-hover:scale-105 transition-transform duration-200">
+          <div className="w-9 h-9 bg-gradient-to-br from-[#1558D6] to-[#1A6BFF] rounded-xl flex items-center justify-center font-black text-white text-base tracking-tighter group-hover:scale-105 transition-transform duration-200 shadow-sm">
             S
           </div>
-          <span className="text-white text-[17px] font-bold tracking-wide">
-            Sivikon <span className="text-cyanCustom">Technologies</span>
+          <span className="text-[#0A1628] text-[16.5px] font-black tracking-wide">
+            Sivikon <span className="text-[#1558D6] font-extrabold">Technologies</span>
           </span>
         </a>
 
         {/* Desktop Links Hub */}
-        <div className="hidden md:flex items-center gap-8">
-          <a href="#hero" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Home</a>
+        <div className="hidden md:flex items-center gap-7">
+          <a href="#hero" className="text-[#6B7A99] hover:text-[#1558D6] text-[14px] font-bold transition-colors">Home</a>
 
-          {/* Solutions Interactive Hover Menu */}
+          {/* Solutions Interactive Hover Menu Container */}
           <div className="relative group" onMouseEnter={() => setOpenDropdown('solutions')} onMouseLeave={closeDropdown}>
             <button
               onClick={() => toggleDropdown('solutions')}
-              className="text-white/75 group-hover:text-cyanCustom text-sm font-medium transition-colors flex items-center gap-1.5 py-4 focus:outline-none"
+              className="text-[#6B7A99] group-hover:text-[#1558D6] text-[14px] font-bold transition-colors flex items-center gap-1 py-4 focus:outline-none cursor-pointer"
             >
-              Solutions
-              <span className={`text-[10px] transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-cyanCustom' : ''}`}>
+              Capabilities
+              <span className={`text-[9px] transition-transform duration-200 ml-0.5 ${openDropdown === 'solutions' ? 'rotate-180 text-[#1558D6]' : ''}`}>
                 ▼
               </span>
             </button>
 
             {openDropdown === 'solutions' && (
-              <div className="absolute top-full left-[-16px] bg-navy2 border border-white/10 rounded-xl py-2 min-w-[280px] shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute top-full left-[-20px] bg-white border border-[#E2E8F4] rounded-xl py-2 min-w-[290px] shadow-xl animate-in fade-in slide-in-from-top-2 duration-150 text-left">
                 {solutionsList.map((sol, index) => (
                   <a
                     key={index}
                     href={sol.href}
                     onClick={closeMobileMenu}
-                    className="block px-5 py-2.5 text-[13px] text-white/80 border-l-2 border-transparent hover:border-cyanCustom hover:text-cyanCustom hover:bg-cyanCustom/5 transition-all"
+                    className="block px-5 py-2.5 text-[13px] text-[#6B7A99] font-medium border-l-2 border-transparent hover:border-[#1558D6] hover:text-[#1558D6] hover:bg-[#F0F5FF] transition-all"
                   >
                     {sol.name}
                   </a>
@@ -104,63 +104,62 @@ export default function Navbar() {
             )}
           </div>
 
-          <a href="#services" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Services</a>
-          <a href="#solutions" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Capabilities</a>
-          <a href="#clients" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Clients</a>
+          <a href="#why" className="text-[#6B7A99] hover:text-[#1558D6] text-[14px] font-bold transition-colors">Corporate Profile</a>
+          <a href="#clients" className="text-[#6B7A99] hover:text-[#1558D6] text-[14px] font-bold transition-colors">Clients & Sectors</a>
           
           <a 
             href="#cta" 
-            className="bg-blueCustom hover:bg-blue2 text-white px-5 py-2 rounded-lg font-semibold text-[13.5px] transition-colors shadow-lg shadow-blueCustom/10"
+            className="bg-gradient-to-br from-[#1558D6] to-[#1A6BFF] text-white px-5 py-2.5 rounded-lg font-bold text-[13px] uppercase tracking-wider transition-all shadow-md shadow-[#1558D6]/10 hover:-translate-y-0.5 cursor-pointer"
           >
-            Get Started
+            Project Intake
           </a>
         </div>
 
         {/* Mobile Hamburger Action Trigger */}
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden flex flex-col gap-1.5 cursor-pointer p-1.5 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none"
+          className="md:hidden flex flex-col items-center justify-center cursor-pointer px-2.5 py-1.5 rounded-lg border border-[#E2E8F4] bg-[#F8FAFC] text-[#0A1628] focus:outline-none"
           aria-expanded={mobileMenuOpen}
           aria-label="Toggle navigation menu"
         >
           {mobileMenuOpen ? (
-            <span className="text-xs font-bold px-1 text-cyanCustom font-mono">CLOSE</span>
+            <span className="text-[11px] font-bold text-[#1558D6] font-mono tracking-wider">CLOSE</span>
           ) : (
-            <>
-              <span className="w-5 h-[2px] bg-white rounded-sm"></span>
-              <span className="w-5 h-[2px] bg-white rounded-sm"></span>
-              <span className="w-5 h-[2px] bg-white rounded-sm"></span>
-            </>
+            <div className="space-y-1">
+              <span className="block w-5 h-[2px] bg-[#0A1628] rounded-sm"></span>
+              <span className="block w-5 h-[2px] bg-[#0A1628] rounded-sm"></span>
+              <span className="block w-5 h-[2px] bg-[#0A1628] rounded-sm"></span>
+            </div>
           )}
         </button>
       </div>
 
       {/* ── RESPONSIVE MOBILE DRAWER SLIDEOUT ── */}
-      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-navy2 ${mobileMenuOpen ? 'max-h-[50rem] border-b border-white/10' : 'max-h-0'}`}>
-        <div className="flex flex-col gap-1.5 p-5">
-          <a href="#hero" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
+      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-white border-x-0 ${mobileMenuOpen ? 'max-h-[50rem] border-b border-[#E2E8F4]' : 'max-h-0'}`}>
+        <div className="flex flex-col text-left p-5 space-y-1">
+          <a href="#hero" onClick={closeMobileMenu} className="text-[#6B7A99] hover:text-[#1558D6] py-2.5 text-sm font-bold border-b border-[#F0F5FF]">
             Home
           </a>
 
           {/* Interactive Mobile Expandable Accordion Track */}
-          <div className="border-b border-white/5 py-1">
+          <div className="border-b border-[#F0F5FF] py-1">
             <button
               onClick={() => toggleDropdown('solutions')}
-              className="w-full flex items-center justify-between text-white/80 hover:text-cyanCustom py-2 text-sm font-medium focus:outline-none"
+              className="w-full flex items-center justify-between text-[#6B7A99] hover:text-[#1558D6] py-2 text-sm font-bold focus:outline-none cursor-pointer"
             >
-              Solutions
-              <span className={`text-[10px] transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-cyanCustom' : ''}`}>
+              Capabilities
+              <span className={`text-[9px] transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-[#1558D6]' : ''}`}>
                 ▼
               </span>
             </button>
             {openDropdown === 'solutions' && (
-              <div className="bg-navy/50 rounded-xl my-1 p-2 space-y-1">
+              <div className="bg-[#F8FAFC] rounded-xl my-1.5 p-2 space-y-0.5 border border-[#E2E8F4]">
                 {solutionsList.map((sol, idx) => (
                   <a
                     key={idx}
                     href={sol.href}
                     onClick={closeMobileMenu}
-                    className="block rounded-lg px-3 py-2 text-xs text-white/60 hover:text-cyanCustom hover:bg-white/5"
+                    className="block rounded-lg px-3 py-2 text-[12.5px] text-[#6B7A99] font-medium hover:text-[#1558D6] hover:bg-[#F0F5FF]"
                   >
                     {sol.name}
                   </a>
@@ -169,23 +168,20 @@ export default function Navbar() {
             )}
           </div>
 
-          <a href="#services" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
-            Services
+          <a href="#why" onClick={closeMobileMenu} className="text-[#6B7A99] hover:text-[#1558D6] py-2.5 text-sm font-bold border-b border-[#F0F5FF]">
+            Corporate Profile
           </a>
-          <a href="#solutions" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
-            Capabilities
-          </a>
-          <a href="#clients" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
-            Clients
+          <a href="#clients" onClick={closeMobileMenu} className="text-[#6B7A99] hover:text-[#1558D6] py-2.5 text-sm font-bold border-b border-[#F0F5FF]">
+            Clients & Sectors
           </a>
           
-          <div className="pt-4">
+          <div className="pt-4 pb-2">
             <a 
               href="#cta" 
               onClick={closeMobileMenu} 
-              className="block bg-blueCustom text-white text-center py-3 rounded-lg text-sm font-semibold shadow-md"
+              className="block bg-gradient-to-br from-[#1558D6] to-[#1A6BFF] text-white text-center py-3 rounded-lg text-xs font-bold uppercase tracking-wider shadow-sm"
             >
-              Get Started
+              Project Intake
             </a>
           </div>
         </div>

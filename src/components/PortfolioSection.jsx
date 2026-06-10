@@ -42,78 +42,78 @@ export default function PortfolioSection() {
   const displayedCases = showAllCases ? caseStudies : caseStudies.slice(0, 2);
 
   return (
-    <section id="portfolio-section" className="relative py-24 px-[5%] overflow-hidden text-left bg-navy border-t border-white/5">
-      
-      {/* Background Ambient Glow Layout */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(21,88,214,0.12)_0%,transparent_70%)] pointer-events-none" />
-
-      <div className="relative max-w-[1280px] mx-auto z-10">
+    <section id="portfolio" className="bg-white py-[90px] px-[5%] font-sans text-left border-t border-[#E2E8F4]">
+      <div className="max-w-[1200px] mx-auto">
         
         {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <div className="inline-flex items-center gap-2 bg-blueCustom/20 border border-blueCustom/40 text-cyanCustom text-xs font-semibold tracking-[1.5px] uppercase px-4 py-1.5 rounded-full backdrop-blur-md">
-            🏆 CASE STUDIES
-          </div>
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mt-6 uppercase leading-tight">
+        <div className="max-w-3xl mb-14">
+          <span className="inline-block text-[11.5px] font-bold tracking-[2px] uppercase text-[#1558D6] mb-3">
+            Case Studies
+          </span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0A1628] leading-[1.1] tracking-[-1.5px]">
             Proven Track Record
           </h2>
-          <p className="text-base text-white/60 mt-6 leading-relaxed max-w-2xl font-normal">
-            Delivering high-impact, enterprise-grade digital transformations across financial systems, mobile platforms, and government sectors[cite: 1].
+          <p className="text-sm sm:text-base text-[#6B7A99] mt-4 leading-[1.75] font-normal max-w-2xl">
+            Delivering high-impact, enterprise-grade digital transformations across financial systems, mobile platforms, and government sectors.
           </p>
         </div>
 
         {/* Case Studies Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-10">
           {displayedCases.map((study) => (
             <div 
               key={study.index} 
-              className="group relative bg-white/5 border border-white/10 rounded-2xl p-8 transition-all duration-300 hover:border-cyanCustom/30 hover:-translate-y-1 shadow-2xl backdrop-blur-md flex flex-col justify-between"
+              className="group relative bg-white border border-[#E2E8F4] rounded-2xl p-6 sm:p-8 transition-all duration-300 hover:border-[#1558D6]/30 hover:shadow-[0_8px_32px_rgba(21,88,214,0.06)] flex flex-col justify-between overflow-hidden"
             >
-              {/* Index Badge */}
-              <div className="absolute top-6 right-8 text-xs font-mono font-bold text-white/40 group-hover:text-cyanCustom transition-colors">
+              {/* Top Accent Gradient Hover Line */}
+              <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#1558D6] to-[#00C2FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+              {/* Index Tracking Tag */}
+              <div className="absolute top-6 right-6 sm:right-8 text-[11px] font-mono font-bold text-[#6B7A99]/50 group-hover:text-[#1558D6] transition-colors">
                 // Case Study {study.index}
               </div>
 
               <div className="space-y-6 flex-grow">
-                {/* Client & Title */}
+                {/* Client Label & Core Title */}
                 <div>
-                  <p className="text-xs font-bold text-cyanCustom uppercase tracking-widest mb-2 font-mono">
+                  <p className="text-[11px] font-bold text-[#1558D6] uppercase tracking-widest mb-1.5 font-mono">
                     {study.client}
                   </p>
-                  <h3 className="text-lg md:text-xl font-black text-white uppercase tracking-tight leading-tight">
+                  <h3 className="text-lg md:text-xl font-extrabold text-[#0A1628] tracking-tight leading-tight">
                     {study.title}
                   </h3>
                 </div>
 
-                {/* Description */}
-                <p className="text-sm text-white/60 leading-relaxed font-normal">
+                {/* Case Study Description */}
+                <p className="text-[13.5px] text-[#6B7A99] leading-relaxed font-normal">
                   {study.description}
                 </p>
 
-                {/* Results Internal Panel */}
-                <div className="bg-navy border border-white/5 rounded-xl p-5">
-                  <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3.5 font-mono">
+                {/* Key Metrics Dashboard Card Panel */}
+                <div className="bg-[#F8FAFC] border border-[#E2E8F4] rounded-xl p-4 sm:p-5">
+                  <p className="text-[10px] font-bold text-[#6B7A99] uppercase tracking-wider mb-3 font-mono">
                     Key Metric Delivery
                   </p>
-                  <div className="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-3.5">
                     {study.results.map((result, idx) => (
-                      <div key={idx} className="flex flex-col justify-center">
-                        <p className="text-xs md:text-sm font-bold text-white leading-snug">{result}</p>
+                      <div key={idx} className="flex flex-col justify-start">
+                        <span className="w-1.5 h-1.5 bg-[#1558D6] rounded-full mb-1.5 block" />
+                        <p className="text-xs font-bold text-[#0A1628] leading-tight">{result}</p>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Technology Stack Tags */}
+                {/* Technology Architecture Tag Pills */}
                 <div>
-                  <p className="text-[10px] font-bold text-white/40 uppercase tracking-widest mb-3 font-mono">
+                  <p className="text-[10px] font-bold text-[#6B7A99] uppercase tracking-wider mb-2.5 font-mono">
                     Core Solutions Architecture
                   </p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {study.tech.map((tech, idx) => (
                       <span 
                         key={idx} 
-                        className="text-xs font-semibold text-white/80 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5 group-hover:border-cyanCustom/20 transition-colors"
+                        className="text-[11px] font-semibold font-mono px-2.5 py-1 rounded bg-[#F0F5FF] text-[#1558D6] border border-[#E2E8F4]/60"
                       >
                         {tech}
                       </span>
@@ -122,11 +122,11 @@ export default function PortfolioSection() {
                 </div>
               </div>
 
-              {/* Action CTA Link */}
-              <div className="mt-8 pt-5 border-t border-white/5">
+              {/* Action Link Button */}
+              <div className="mt-6 pt-4 border-t border-[#F0F5FF]">
                 <a 
                   href="#cta" 
-                  className="text-sm font-bold text-cyanCustom hover:text-white transition-colors inline-flex items-center gap-2 group/link"
+                  className="text-xs font-bold uppercase tracking-wider text-[#1558D6] hover:text-[#0A1628] transition-colors inline-flex items-center gap-1.5 group/link"
                 >
                   Request Case Study Insights 
                   <span className="transform group-hover/link:translate-x-1 transition-transform">➔</span>
@@ -136,42 +136,38 @@ export default function PortfolioSection() {
           ))}
         </div>
 
-        {/* Expand/Collapse Button Container */}
-        <div className="flex justify-center mb-24">
+        {/* Expand/Collapse Custom Roster View Control Button */}
+        <div className="flex justify-center mb-16">
           <button 
             onClick={() => setShowAllCases(!showAllCases)}
-            className="inline-flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:border-cyanCustom/30 px-8 py-3.5 text-xs font-bold uppercase tracking-widest text-white shadow-xl transition-all duration-200 transform hover:scale-[1.01]"
+            className="inline-flex items-center justify-center rounded-xl bg-white border border-[#E2E8F4] hover:border-[#1558D6]/40 px-6 py-3 text-xs font-bold uppercase tracking-wider text-[#0A1628] hover:bg-[#F8FAFC] shadow-sm transition-all duration-200 cursor-pointer"
           >
             {showAllCases ? 'Collapse View ↑' : 'View Full Roster ↓'}
           </button>
         </div>
 
-        {/* Highlight Banner: Impact Statistics */}
-        <div className="bg-gradient-to-br from-white/5 to-white/[0.02] border border-white/10 rounded-2xl p-12 text-white shadow-2xl backdrop-blur-md relative overflow-hidden group hover:border-cyanCustom/20 transition-colors duration-300">
-          <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(21,88,214,0.1)_0%,transparent_70%)] pointer-events-none" />
+        {/* Corporate Metrics Impact Banner */}
+        <div className="bg-[#0A1628] text-white rounded-2xl p-8 md:p-12 shadow-md relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[radial-gradient(circle,rgba(21,88,214,0.08)_0%,transparent_70%)] pointer-events-none" />
           
-          <h3 className="text-xl font-black uppercase mb-12 text-center tracking-tight font-mono text-cyanCustom">// Impact By Numbers</h3>
+          <h3 className="text-sm font-mono font-bold uppercase mb-10 text-center tracking-widest text-[#00C2FF]">// Impact by the Numbers</h3>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center divide-y md:divide-y-0 md:divide-x divide-white/5">
-            150+ Projects Delivered
-            <div className="pt-4 md:pt-0">
-              <p className="text-3xl md:text-5xl font-black text-white tracking-tight">150+</p>
-              <p className="text-[10px] font-bold uppercase tracking-widest mt-3 text-white/55 font-mono">Projects Delivered</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center md:divide-x md:divide-white/10">
+            <div>
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">150+</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider mt-2.5 text-white/60 font-mono">Projects Delivered</p>
             </div>
-            50+ Technical Capability Tools
-            <div className="pt-4 md:pt-0">
-              <p className="text-3xl md:text-5xl font-black text-white tracking-tight">50+</p>
-              <p className="text-[10px] font-bold uppercase tracking-widest mt-3 text-white/55 font-mono">QA & Tech Tools</p>
+            <div className="border-t border-white/10 pt-6 md:pt-0 md:border-t-0">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">50+</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider mt-2.5 text-white/60 font-mono">QA & Tech Tools</p>
             </div>
-            99.99% Architecture Target
-            <div className="pt-4 md:pt-0">
-              <p className="text-3xl md:text-5xl font-black text-white tracking-tight">99.99%</p>
-              <p className="text-[10px] font-bold uppercase tracking-widest mt-3 text-white/55 font-mono">Uptime Target</p>
+            <div className="border-t border-white/10 pt-6 md:pt-0 md:border-t-0">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">99.99%</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider mt-2.5 text-white/60 font-mono">Uptime Target</p>
             </div>
-            2+ Years Active Operations
-            <div className="pt-4 md:pt-0">
-              <p className="text-3xl md:text-5xl font-black text-white tracking-tight">2+</p>
-              <p className="text-[10px] font-bold uppercase tracking-widest mt-3 text-white/55 font-mono">Years Operational</p>
+            <div className="border-t border-white/10 pt-6 md:pt-0 md:border-t-0">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight">2+</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider mt-2.5 text-white/60 font-mono">Years Operational</p>
             </div>
           </div>
         </div>
