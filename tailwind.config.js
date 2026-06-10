@@ -7,50 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Your custom canvas background color
-        canvasDark: '#070b13',
-        primary: {
-          50: '#f0f7ff',
-          100: '#e0effe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c3d66',
-        },
-        accent: {
-          50: '#fef3c7',
-          100: '#fde68a',
-          200: '#fcd34d',
-          300: '#fbbf24',
-          400: '#f59e0b',
-          500: '#f97316',
-          600: '#ea580c',
-          700: '#c2410c',
-          800: '#92400e',
-          900: '#78350f',
-        },
-        dark: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-        }
+        // Cohesive Enterprise Color Palette
+        navy: '#091124',        // Main canvas dark background color[cite: 1]
+        navy2: '#0e1a34',       // Lighter card/panel background layout element[cite: 1]
+        blueCustom: '#1558d6',  // Premium brand primary blue[cite: 1]
+        blue2: '#0f40a1',       // Deep action hover blue configuration[cite: 1]
+        cyanCustom: '#00f0ff',  // High-contrast neon feature accent indicator[cite: 1]
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 90deg at 50% 50%, var(--tw-gradient-stops))',
-        // Added semantic premium mesh gradient utility mapped directly to your theme colors
-        'mesh-glow': 'radial-gradient(at 0% 0%, rgba(14,165,233,0.12) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(2,132,199,0.15) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(249,115,22,0.06) 0px, transparent 50%)',
+        
+        // Premium brand mesh gradient utility mapped directly to your design system tokens
+        'mesh-glow': 'radial-gradient(at 0% 0%, rgba(21,88,214,0.12) 0px, transparent 50%), radial-gradient(at 50% 0%, rgba(15,64,161,0.15) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(0,240,255,0.06) 0px, transparent 50%)',
       },
     },
   },

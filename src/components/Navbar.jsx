@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Monitor scroll for clean header contrast updates
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleDropdown = (name) => {
     setOpenDropdown(openDropdown === name ? null : name);
@@ -14,7 +24,7 @@ export default function Navbar() {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((current) => !current);
-    if (mobileMenuOpen) {
+    if (!mobileMenuOpen) {
       setOpenDropdown(null);
     }
   };
@@ -24,178 +34,157 @@ export default function Navbar() {
     setOpenDropdown(null);
   };
 
+  // Explicitly mapped solution parameters from template profile
+  const solutionsList = [
+    { name: "Web Application Development", href: "#solutions" },
+    { name: "Automated QA & Testing", href: "#solutions" },
+    { name: "Cloud & API Infrastructure", href: "#solutions" },
+    { name: "Database & Fleet Systems", href: "#solutions" },
+    { name: "Mobile App Testing", href: "#solutions" },
+    { name: "Security & Penetration Testing", href: "#solutions" },
+  ];
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50">
-      {/* Informational Top Banner */}
-      <div className="hidden md:flex items-center justify-between px-4 py-2 text-xs text-dark-400 bg-canvasDark/95 border-b border-white/5 backdrop-blur-xl">
-        <div className="flex flex-wrap items-center gap-4">
-          <span className="inline-flex items-center gap-2">📞 +254 721 501 604</span>
-          <span className="inline-flex items-center gap-2">✉️ sivikontechnologies@gmail.com</span>
-        </div>
-        <div className="text-dark-500">Nairobi, Kenya — Serving Global Markets</div>
-      </div>
-
-      {/* Main Bar Navigation Layout */}
-      <div className="bg-canvasDark/80 border-b border-white/5 backdrop-blur-md shadow-2xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between gap-4">
-          
-          {/* Logo Branding */}
-          <a href="#hero" className="flex items-center gap-3 text-white no-underline group">
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-primary-500 to-primary-600 text-lg font-black text-white shadow-lg shadow-primary-500/20 group-hover:scale-105 transition-transform duration-200">
-              S
-            </span>
-            <div className="flex flex-col leading-tight">
-              <span className="text-sm font-black uppercase tracking-[0.3em] text-white">Sivikon</span>
-              <span className="text-[10px] uppercase tracking-[0.35em] text-dark-400">Technologies</span>
-            </div>
+    <nav className="fixed top-0 left-0 right-0 z-[999]">
+      {/* ── TOP INFORMATIONAL BANNER ── */}
+      <div className="hidden md:flex items-center justify-between px-[5%] py-2 text-xs text-white/55 bg-navy border-b border-white/5 backdrop-blur-md">
+        <div className="flex flex-wrap items-center gap-6 font-medium">
+          <a href="tel:+254721501604" className="hover:text-cyanCustom transition-colors flex items-center gap-1.5">
+            📞 +254 721 501 604
           </a>
-
-          {/* Desktop Navigation Link Hub */}
-          <div className="hidden md:flex items-center gap-1 text-sm font-semibold text-dark-200">
-            <a href="#hero" className="px-4 py-2 rounded-lg hover:text-primary-400 transition-colors">Home</a>
-
-            {/* Solutions Interactive Menu */}
-            <div className="relative" onMouseEnter={() => setOpenDropdown('solutions')} onMouseLeave={closeDropdown}>
-              <button
-                onClick={() => toggleDropdown('solutions')}
-                className="px-4 py-2 flex items-center gap-2 rounded-lg hover:text-primary-400 transition-colors"
-              >
-                Solutions
-                <span className={`inline-block transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-primary-400' : ''}`}>
-                  ▾
-                </span>
-              </button>
-
-              {openDropdown === 'solutions' && (
-                <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl border border-white/5 bg-dark-900/95 p-1.5 shadow-2xl backdrop-blur-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-                  <a href="#products-suite" onClick={closeMobileMenu} className="block px-4 py-3 rounded-xl text-sm text-dark-200 hover:bg-primary-500/10 hover:text-primary-300 transition-colors">Education Platforms</a>
-                  <a href="#products-suite" onClick={closeMobileMenu} className="block px-4 py-3 rounded-xl text-sm text-dark-200 hover:bg-primary-500/10 hover:text-primary-300 transition-colors">Healthcare Systems</a>
-                  <a href="#products-suite" onClick={closeMobileMenu} className="block px-4 py-3 rounded-xl text-sm text-dark-200 hover:bg-primary-500/10 hover:text-primary-300 transition-colors">Finance & Public Sector</a>
-                </div>
-              )}
-            </div>
-
-            {/* Services Interactive Menu */}
-            <div className="relative" onMouseEnter={() => setOpenDropdown('services')} onMouseLeave={closeDropdown}>
-              <button
-                onClick={() => toggleDropdown('services')}
-                className="px-4 py-2 flex items-center gap-2 rounded-lg hover:text-primary-400 transition-colors"
-              >
-                Services
-                <span className={`inline-block transition-transform duration-200 ${openDropdown === 'services' ? 'rotate-180 text-primary-400' : ''}`}>
-                  ▾
-                </span>
-              </button>
-
-              {openDropdown === 'services' && (
-                <div className="absolute top-full left-0 mt-2 w-72 rounded-2xl border border-white/5 bg-dark-900/95 p-1.5 shadow-2xl backdrop-blur-xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
-                  <a href="#services-section" onClick={closeMobileMenu} className="block px-4 py-3 rounded-xl text-sm text-dark-200 hover:bg-primary-500/10 hover:text-primary-300 transition-colors">Custom Software</a>
-                  <a href="#services-section" onClick={closeMobileMenu} className="block px-4 py-3 rounded-xl text-sm text-dark-200 hover:bg-primary-500/10 hover:text-primary-300 transition-colors">QA & Testing</a>
-                  <a href="#services-section" onClick={closeMobileMenu} className="block px-4 py-3 rounded-xl text-sm text-dark-200 hover:bg-primary-500/10 hover:text-primary-300 transition-colors">Cloud Operations</a>
-                </div>
-              )}
-            </div>
-
-            <a href="#portfolio-section" className="px-4 py-2 rounded-lg hover:text-primary-400 transition-colors">Portfolio</a>
-            <a href="#about-section" className="px-4 py-2 rounded-lg hover:text-primary-400 transition-colors">About</a>
-            <a href="#contact" className="px-4 py-2 rounded-lg hover:text-primary-400 transition-colors">Contact</a>
-          </div>
-
-          {/* Action CTA Button */}
-          <div className="hidden md:block">
-            <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-3 text-sm font-bold uppercase tracking-widest text-white shadow-lg shadow-primary-500/20 transition-all duration-200 transform hover:scale-[1.03] hover:from-primary-400 hover:to-primary-500"
-            >
-              Get Started
-            </a>
-          </div>
-
-          {/* Mobile Action Hamburger Toggle Button */}
-          <button
-            onClick={toggleMobileMenu}
-            className="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/5 bg-dark-900/60 text-dark-200 hover:bg-dark-800 hover:text-primary-400 transition-colors duration-200"
-            aria-expanded={mobileMenuOpen}
-            aria-label="Toggle navigation menu"
-          >
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+          <a href="mailto:sivikontechnologies@gmail.com" className="hover:text-cyanCustom transition-colors flex items-center gap-1.5">
+            ✉️ sivikontechnologies@gmail.com
+          </a>
         </div>
+        <div className="font-medium text-white/40">Nairobi, Kenya — Serving Global Markets</div>
       </div>
 
-      {/* Responsive Mobile Drawer Menu */}
-      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out ${mobileMenuOpen ? 'max-h-[80rem]' : 'max-h-0'}`}>
-        <div className="space-y-2 px-4 pb-6 pt-3 bg-canvasDark/95 border-t border-white/5 shadow-inner backdrop-blur-xl">
-          <a href="#hero" onClick={closeMobileMenu} className="block rounded-xl px-4 py-3 text-sm font-semibold text-dark-200 hover:bg-dark-900 hover:text-primary-400 transition-colors">
+      {/* ── MAIN NAVIGATION BAR ── */}
+      <div className={`h-[70px] px-[5%] flex items-center justify-between transition-all duration-200 border-b border-white/5 backdrop-blur-md ${scrolled ? 'bg-navy/95 shadow-lg' : 'bg-navy/90'}`}>
+        
+        {/* Logo Branding Vector */}
+        <a href="#hero" className="flex items-center gap-2.5 no-underline group">
+          <div className="w-[38px] h-[38px] bg-gradient-to-br from-blueCustom to-cyanCustom rounded-xl flex items-center justify-center font-black text-white text-lg tracking-tighter group-hover:scale-105 transition-transform duration-200">
+            S
+          </div>
+          <span className="text-white text-[17px] font-bold tracking-wide">
+            Sivikon <span className="text-cyanCustom">Technologies</span>
+          </span>
+        </a>
+
+        {/* Desktop Links Hub */}
+        <div className="hidden md:flex items-center gap-8">
+          <a href="#hero" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Home</a>
+
+          {/* Solutions Interactive Hover Menu */}
+          <div className="relative group" onMouseEnter={() => setOpenDropdown('solutions')} onMouseLeave={closeDropdown}>
+            <button
+              onClick={() => toggleDropdown('solutions')}
+              className="text-white/75 group-hover:text-cyanCustom text-sm font-medium transition-colors flex items-center gap-1.5 py-4 focus:outline-none"
+            >
+              Solutions
+              <span className={`text-[10px] transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-cyanCustom' : ''}`}>
+                ▼
+              </span>
+            </button>
+
+            {openDropdown === 'solutions' && (
+              <div className="absolute top-full left-[-16px] bg-navy2 border border-white/10 rounded-xl py-2 min-w-[280px] shadow-2xl animate-in fade-in slide-in-from-top-2 duration-150">
+                {solutionsList.map((sol, index) => (
+                  <a
+                    key={index}
+                    href={sol.href}
+                    onClick={closeMobileMenu}
+                    className="block px-5 py-2.5 text-[13px] text-white/80 border-l-2 border-transparent hover:border-cyanCustom hover:text-cyanCustom hover:bg-cyanCustom/5 transition-all"
+                  >
+                    {sol.name}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <a href="#services" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Services</a>
+          <a href="#solutions" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Capabilities</a>
+          <a href="#clients" className="text-white/75 hover:text-cyanCustom text-sm font-medium transition-colors">Clients</a>
+          
+          <a 
+            href="#cta" 
+            className="bg-blueCustom hover:bg-blue2 text-white px-5 py-2 rounded-lg font-semibold text-[13.5px] transition-colors shadow-lg shadow-blueCustom/10"
+          >
+            Get Started
+          </a>
+        </div>
+
+        {/* Mobile Hamburger Action Trigger */}
+        <button
+          onClick={toggleMobileMenu}
+          className="md:hidden flex flex-col gap-1.5 cursor-pointer p-1.5 rounded-lg border border-white/10 bg-white/5 text-white focus:outline-none"
+          aria-expanded={mobileMenuOpen}
+          aria-label="Toggle navigation menu"
+        >
+          {mobileMenuOpen ? (
+            <span className="text-xs font-bold px-1 text-cyanCustom font-mono">CLOSE</span>
+          ) : (
+            <>
+              <span className="w-5 h-[2px] bg-white rounded-sm"></span>
+              <span className="w-5 h-[2px] bg-white rounded-sm"></span>
+              <span className="w-5 h-[2px] bg-white rounded-sm"></span>
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* ── RESPONSIVE MOBILE DRAWER SLIDEOUT ── */}
+      <div className={`md:hidden overflow-hidden transition-[max-height] duration-300 ease-in-out bg-navy2 ${mobileMenuOpen ? 'max-h-[50rem] border-b border-white/10' : 'max-h-0'}`}>
+        <div className="flex flex-col gap-1.5 p-5">
+          <a href="#hero" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
             Home
           </a>
 
-          {/* Mobile Drops Contexts */}
-          <div className="space-y-1 rounded-2xl border border-white/5 bg-dark-900/50 p-1">
+          {/* Interactive Mobile Expandable Accordion Track */}
+          <div className="border-b border-white/5 py-1">
             <button
               onClick={() => toggleDropdown('solutions')}
-              className="w-full flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-dark-200 hover:bg-dark-900 hover:text-primary-400 transition-colors"
+              className="w-full flex items-center justify-between text-white/80 hover:text-cyanCustom py-2 text-sm font-medium focus:outline-none"
             >
               Solutions
-              <span className={`inline-block transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-primary-400' : ''}`}>
-                ▾
+              <span className={`text-[10px] transition-transform duration-200 ${openDropdown === 'solutions' ? 'rotate-180 text-cyanCustom' : ''}`}>
+                ▼
               </span>
             </button>
             {openDropdown === 'solutions' && (
-              <div className="space-y-1 px-4 pb-2 pt-1">
-                <a href="#products-suite" onClick={closeMobileMenu} className="block rounded-xl px-3 py-2.5 text-sm text-dark-400 hover:bg-dark-800 hover:text-primary-300 transition-colors">
-                  Education Platforms
-                </a>
-                <a href="#products-suite" onClick={closeMobileMenu} className="block rounded-xl px-3 py-2.5 text-sm text-dark-400 hover:bg-dark-800 hover:text-primary-300 transition-colors">
-                  Healthcare Systems
-                </a>
-                <a href="#products-suite" onClick={closeMobileMenu} className="block rounded-xl px-3 py-2.5 text-sm text-dark-400 hover:bg-dark-800 hover:text-primary-300 transition-colors">
-                  Finance & Public Sector
-                </a>
+              <div className="bg-navy/50 rounded-xl my-1 p-2 space-y-1">
+                {solutionsList.map((sol, idx) => (
+                  <a
+                    key={idx}
+                    href={sol.href}
+                    onClick={closeMobileMenu}
+                    className="block rounded-lg px-3 py-2 text-xs text-white/60 hover:text-cyanCustom hover:bg-white/5"
+                  >
+                    {sol.name}
+                  </a>
+                ))}
               </div>
             )}
           </div>
 
-          <div className="space-y-1 rounded-2xl border border-white/5 bg-dark-900/50 p-1">
-            <button
-              onClick={() => toggleDropdown('services')}
-              className="w-full flex items-center justify-between rounded-xl px-4 py-3 text-sm font-semibold text-dark-200 hover:bg-dark-900 hover:text-primary-400 transition-colors"
-            >
-              Services
-              <span className={`inline-block transition-transform duration-200 ${openDropdown === 'services' ? 'rotate-180 text-primary-400' : ''}`}>
-                ▾
-              </span>
-            </button>
-            {openDropdown === 'services' && (
-              <div className="space-y-1 px-4 pb-2 pt-1">
-                <a href="#services-section" onClick={closeMobileMenu} className="block rounded-xl px-3 py-2.5 text-sm text-dark-400 hover:bg-dark-800 hover:text-primary-300 transition-colors">
-                  Custom Software
-                </a>
-                <a href="#services-section" onClick={closeMobileMenu} className="block rounded-xl px-3 py-2.5 text-sm text-dark-400 hover:bg-dark-800 hover:text-primary-300 transition-colors">
-                  QA & Testing
-                </a>
-                <a href="#services-section" onClick={closeMobileMenu} className="block rounded-xl px-3 py-2.5 text-sm text-dark-400 hover:bg-dark-800 hover:text-primary-300 transition-colors">
-                  Cloud Operations
-                </a>
-              </div>
-            )}
-          </div>
-
-          <a href="#portfolio-section" onClick={closeMobileMenu} className="block rounded-xl px-4 py-3 text-sm font-semibold text-dark-200 hover:bg-dark-900 hover:text-primary-400 transition-colors">
-            Portfolio
+          <a href="#services" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
+            Services
           </a>
-          <a href="#about-section" onClick={closeMobileMenu} className="block rounded-xl px-4 py-3 text-sm font-semibold text-dark-200 hover:bg-dark-900 hover:text-primary-400 transition-colors">
-            About
+          <a href="#solutions" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
+            Capabilities
+          </a>
+          <a href="#clients" onClick={closeMobileMenu} className="text-white/80 hover:text-cyanCustom py-2.5 text-sm font-medium border-b border-white/5">
+            Clients
           </a>
           
-          <div className="pt-2">
-            <a href="#contact" onClick={closeMobileMenu} className="block rounded-xl bg-gradient-to-r from-primary-500 to-primary-600 py-3.5 text-center text-sm font-bold text-white shadow-lg shadow-primary-500/10 transition active:scale-[0.98]">
+          <div className="pt-4">
+            <a 
+              href="#cta" 
+              onClick={closeMobileMenu} 
+              className="block bg-blueCustom text-white text-center py-3 rounded-lg text-sm font-semibold shadow-md"
+            >
               Get Started
             </a>
           </div>

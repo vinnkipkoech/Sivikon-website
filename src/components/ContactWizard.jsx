@@ -28,39 +28,41 @@ export default function ContactWizard() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // This is where you'll link your email service or backend API ingest pipeline
     console.log('Ingesting Enterprise Lead Data Target:', formData);
     setIsSubmitted(true);
   };
 
   return (
-    <section id="contact" className="relative py-32 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0b0f19] text-left">
-      {/* Ambient background blur elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="cta" className="relative py-24 px-[5%] overflow-hidden bg-navy text-left border-t border-white/5">
+      {/* Background Grid Accent Layer from master template */}
+      <div className="absolute inset-0 opacity-[0.04] hero-grid-bg pointer-events-none" />
+      
+      {/* Signature Radial Glow Gradient Overlay */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(21,88,214,0.15)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="relative max-w-3xl mx-auto">
+      <div className="relative max-w-3xl mx-auto z-10">
         
-        {/* Header */}
+        {/* Synchronized Header Block */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2.5 text-[11px] font-bold tracking-widest text-emerald-400 uppercase bg-emerald-500/10 border border-emerald-500/20 px-4 py-2 rounded-full">
+          <div className="inline-flex items-center gap-2 bg-blueCustom/20 border border-blueCustom/40 text-cyanCustom text-xs font-semibold tracking-[1.5px] uppercase px-4 py-1.5 rounded-full">
             🚀 PROJECT INTAKE
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-6 uppercase tracking-tight">
-            Initiate Your Transformation
+          <h2 className="text-3xl md:text-5xl font-black text-white mt-6 uppercase tracking-tight">
+            Initiate Your <span className="bg-gradient-to-r from-cyanCustom to-blue2 bg-clip-text text-transparent">Transformation</span>
           </h2>
-          <p className="text-base text-slate-400 mt-4 max-w-xl mx-auto font-medium">
+          <p className="text-base text-white/60 mt-4 max-w-xl mx-auto font-normal">
             Select your parameters below to generate a tailored enterprise proposal and implementation roadmap.
           </p>
         </div>
 
-        {/* Wizard Container Card */}
-        <div className="rounded-3xl border border-white/5 bg-[#121826]/40 p-8 md:p-12 shadow-2xl backdrop-blur-xl relative">
+        {/* Re-Architected Card Container Layout */}
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 md:p-12 shadow-2xl backdrop-blur-md relative">
           
-          {/* Progress Bar Track */}
+          {/* Aligned Progress Bar Track */}
           {!isSubmitted && (
             <div className="w-full bg-white/5 h-1 rounded-full mb-10 overflow-hidden">
               <div 
-                className="bg-gradient-to-r from-emerald-500 to-teal-500 h-full transition-all duration-300"
+                className="bg-gradient-to-r from-blueCustom to-cyanCustom h-full transition-all duration-300"
                 style={{ width: `${(step / 3) * 100}%` }}
               />
             </div>
@@ -69,11 +71,11 @@ export default function ContactWizard() {
           {isSubmitted ? (
             /* Success Feedback View */
             <div className="text-center py-8 space-y-4">
-              <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-3xl mb-2">
+              <div className="inline-flex h-16 w-16 items-center justify-center rounded-xl bg-blueCustom/20 text-cyanCustom border border-blueCustom/40 text-2xl font-bold mb-2">
                 ✓
               </div>
               <h3 className="text-2xl font-black text-white uppercase tracking-tight">Intake Specifications Received</h3>
-              <p className="text-sm text-slate-300 max-w-md mx-auto leading-relaxed font-medium">
+              <p className="text-sm text-white/70 max-w-md mx-auto leading-relaxed font-normal">
                 Thank you, <span className="text-white font-bold">{formData.name}</span>. Our enterprise architecture team is reviewing your requirements for <span className="text-white font-bold">{formData.organization || 'your project'}</span>. We will schedule our preliminary consulting session within 24 hours.
               </p>
             </div>
@@ -83,7 +85,7 @@ export default function ContactWizard() {
               {/* STEP 1: SECTOR INTERACTION SELECTION */}
               {step === 1 && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight">// Step 1: Identify Your Operational Sector</h3>
+                  <h3 className="text-sm font-mono font-bold text-cyanCustom uppercase tracking-widest">// Step 1: Identify Your Operational Sector</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {[
                       { id: 'financial', label: 'Finance, FinTech & SACCOs' },
@@ -97,10 +99,10 @@ export default function ContactWizard() {
                         key={sector.id}
                         type="button"
                         onClick={() => updateField('sector', sector.id)}
-                        className={`p-5 rounded-2xl border text-left font-semibold text-sm transition-all duration-200 ${
+                        className={`p-5 rounded-xl border text-left font-semibold text-sm transition-all duration-200 ${
                           formData.sector === sector.id 
-                            ? 'bg-emerald-500/10 border-emerald-500 text-white shadow-lg' 
-                            : 'bg-[#0b0f19]/40 border-white/5 text-slate-300 hover:border-white/10 hover:text-white'
+                            ? 'bg-blueCustom/20 border-cyanCustom text-white shadow-lg' 
+                            : 'bg-white/5 border-white/5 text-white/80 hover:border-cyanCustom/30 hover:text-white'
                         }`}
                       >
                         {sector.label}
@@ -111,7 +113,7 @@ export default function ContactWizard() {
                     <button
                       disabled={!formData.sector}
                       type="submit"
-                      className="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold uppercase tracking-widest transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-emerald-600/10"
+                      className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blueCustom to-blue2 text-white text-sm font-bold uppercase tracking-widest transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_4px_20px_rgba(21,88,214,0.3)]"
                     >
                       Next Parameter ➔
                     </button>
@@ -122,7 +124,7 @@ export default function ContactWizard() {
               {/* STEP 2: CORE OBJECTIVE ARCHITECTURE */}
               {step === 2 && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight">// Step 2: Define Core Modernization Target</h3>
+                  <h3 className="text-sm font-mono font-bold text-cyanCustom uppercase tracking-widest">// Step 2: Define Core Modernization Target</h3>
                   <div className="grid grid-cols-1 gap-4">
                     {[
                       { id: 'legacy', label: 'Legacy System Modernization & Optimization' },
@@ -133,10 +135,10 @@ export default function ContactWizard() {
                         key={obj.id}
                         type="button"
                         onClick={() => updateField('objective', obj.id)}
-                        className={`p-5 rounded-2xl border text-left font-semibold text-sm transition-all duration-200 ${
+                        className={`p-5 rounded-xl border text-left font-semibold text-sm transition-all duration-200 ${
                           formData.objective === obj.id 
-                            ? 'bg-emerald-500/10 border-emerald-500 text-white shadow-lg' 
-                            : 'bg-[#0b0f19]/40 border-white/5 text-slate-300 hover:border-white/10 hover:text-white'
+                            ? 'bg-blueCustom/20 border-cyanCustom text-white shadow-lg' 
+                            : 'bg-white/5 border-white/5 text-white/80 hover:border-cyanCustom/30 hover:text-white'
                         }`}
                       >
                         {obj.label}
@@ -148,14 +150,14 @@ export default function ContactWizard() {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="px-6 py-3 rounded-xl bg-transparent border border-white/10 text-slate-300 hover:text-white hover:border-white/20 text-sm font-bold uppercase tracking-widest transition-colors"
+                      className="px-6 py-3.5 rounded-xl bg-transparent border border-white/25 text-white/80 hover:text-white hover:border-white/40 text-sm font-semibold uppercase tracking-widest transition-colors"
                     >
                       ← Back
                     </button>
                     <button
                       disabled={!formData.objective}
                       type="submit"
-                      className="px-8 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-bold uppercase tracking-widest transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-lg shadow-emerald-600/10"
+                      className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blueCustom to-blue2 text-white text-sm font-bold uppercase tracking-widest transition-all duration-200 disabled:opacity-40 disabled:cursor-not-allowed shadow-[0_4px_20px_rgba(21,88,214,0.3)]"
                     >
                       Next Parameter ➔
                     </button>
@@ -166,53 +168,53 @@ export default function ContactWizard() {
               {/* STEP 3: STAKEHOLDER & CORPORATE IDENTITY DATA */}
               {step === 3 && (
                 <div className="space-y-6">
-                  <h3 className="text-lg font-bold text-white uppercase tracking-tight">// Step 3: Corporate Contact Coordinates</h3>
+                  <h3 className="text-sm font-mono font-bold text-cyanCustom uppercase tracking-widest">// Step 3: Corporate Contact Coordinates</h3>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="flex flex-col space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Your Name</label>
+                      <label className="text-[10px] font-bold text-white/55 uppercase tracking-widest">Your Name</label>
                       <input 
                         required
                         type="text" 
                         value={formData.name}
                         onChange={(e) => updateField('name', e.target.value)}
                         placeholder="e.g., Dedan Otiato"
-                        className="bg-[#0b0f19]/60 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors font-medium placeholder-slate-600"
+                        className="bg-navy border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyanCustom transition-colors font-medium placeholder-white/25"
                       />
                     </div>
                     <div className="flex flex-col space-y-2">
-                      <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Corporate Email Address</label>
+                      <label className="text-[10px] font-bold text-white/55 uppercase tracking-widest">Corporate Email Address</label>
                       <input 
                         required
                         type="email" 
                         value={formData.email}
                         onChange={(e) => updateField('email', e.target.value)}
                         placeholder="e.g., d.otiato@organization.com"
-                        className="bg-[#0b0f19]/60 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors font-medium placeholder-slate-600"
+                        className="bg-navy border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyanCustom transition-colors font-medium placeholder-white/25"
                       />
                     </div>
                   </div>
 
                   <div className="flex flex-col space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Organization / Enterprise Name</label>
+                    <label className="text-[10px] font-bold text-white/55 uppercase tracking-widest">Organization / Enterprise Name</label>
                     <input 
                       required
                       type="text" 
                       value={formData.organization}
                       onChange={(e) => updateField('organization', e.target.value)}
                       placeholder="e.g., Varde Engineering Co. LTD"
-                      className="bg-[#0b0f19]/60 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors font-medium placeholder-slate-600"
+                      className="bg-navy border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyanCustom transition-colors font-medium placeholder-white/25"
                     />
                   </div>
 
                   <div className="flex flex-col space-y-2">
-                    <label className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Brief Architectural or Scope Considerations</label>
+                    <label className="text-[10px] font-bold text-white/55 uppercase tracking-widest">Brief Architectural or Scope Considerations</label>
                     <textarea 
                       rows={4}
                       value={formData.details}
                       onChange={(e) => updateField('details', e.target.value)}
                       placeholder="Outline any legacy stack issues, security baselines, or estimated transaction throughput needs..."
-                      className="bg-[#0b0f19]/60 border border-white/5 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-emerald-500 transition-colors font-medium placeholder-slate-600 resize-none"
+                      className="bg-navy border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyanCustom transition-colors font-medium placeholder-white/25 resize-none"
                     />
                   </div>
 
@@ -220,13 +222,13 @@ export default function ContactWizard() {
                     <button
                       type="button"
                       onClick={handleBack}
-                      className="px-6 py-3 rounded-xl bg-transparent border border-white/10 text-slate-300 hover:text-white hover:border-white/20 text-sm font-bold uppercase tracking-widest transition-colors"
+                      className="px-6 py-3.5 rounded-xl bg-transparent border border-white/25 text-white/80 hover:text-white hover:border-white/40 text-sm font-semibold uppercase tracking-widest transition-colors"
                     >
                       ← Back
                     </button>
                     <button
                       type="submit"
-                      className="px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-white text-sm font-bold uppercase tracking-widest transition-all duration-200 transform hover:scale-[1.02] shadow-lg shadow-emerald-500/20"
+                      className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-blueCustom to-blue2 text-white text-sm font-bold uppercase tracking-widest transition-all duration-200 transform hover:scale-[1.01] shadow-[0_4px_20px_rgba(21,88,214,0.4)]"
                     >
                       Submit System Request ➔
                     </button>

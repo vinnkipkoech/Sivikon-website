@@ -3,15 +3,15 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutSection from './components/AboutSection';
 import CapabilitiesGrid from './components/CapabilitiesGrid';
-import ProductsSuite from './components/ProductsSuite';
+import Clients from './components/Clients';               // Refactored from SimpleBrowser
+import Solutions from './components/Solutions';           // Refactored from ProductsSuite
 import PortfolioSection from './components/PortfolioSection';
-import SimpleBrowser from './components/SimpleBrowser';
-import ContactWizard from './components/ContactWizard'; // Integrated the project intake wizard
+import ContactWizard from './components/ContactWizard';   // Core intake wizard (#cta)
 import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#0b0f19] text-white flex flex-col antialiased selection:bg-emerald-500/30 selection:text-white">
+    <div className="min-h-screen bg-navy text-white flex flex-col antialiased selection:bg-blueCustom/30 selection:text-cyanCustom">
       {/* Navigation Layer */}
       <Navbar />
       
@@ -27,15 +27,15 @@ function App() {
         <CapabilitiesGrid />
 
         {/* Served Sectors & Trust Verification */}
-        <SimpleBrowser />
+        <Clients />
 
         {/* Enterprise Solutions Suite */}
-        <ProductsSuite />
+        <Solutions />
 
         {/* Case Studies Track */}
         <PortfolioSection />
 
-        {/* Interactive Qualification Layer */}
+        {/* Interactive Qualification Layer (Project Intake Wizard) */}
         <ContactWizard />
       </main>
 
