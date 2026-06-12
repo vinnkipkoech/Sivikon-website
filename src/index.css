@@ -607,3 +607,253 @@ footer { background: var(--navy2); padding: 60px 5% 30px; border-top: 1px solid 
   .stat-number { font-size: 38px; }
   .service-item, .client-card { flex-direction: column; }
 }
+
+/* ─────────────────────────────────────────────
+   ROUTER ADDITIONS — multi-page architecture
+   ───────────────────────────────────────────── */
+
+/* Active nav link state (React Router NavLink) */
+.nav-links a.active { color: var(--cyan); }
+.nav-cta.active { color: white !important; }
+
+/* Static gradient word in the hero headline */
+.word-rotator-static {
+  background: linear-gradient(90deg, var(--cyan), var(--blue2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Inner page hero header (About / Team / Portfolio / Services / Contact) ── */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy);
+  padding: 150px 5% 80px;
+}
+.page-hero-inner { position: relative; z-index: 1; max-width: 820px; }
+.page-hero-title {
+  color: white;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1.08;
+  margin: 18px 0 18px;
+}
+.page-hero-title .accent {
+  background: linear-gradient(90deg, var(--cyan), var(--blue2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.page-hero-sub {
+  color: rgba(255,255,255,0.6);
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 620px;
+}
+
+/* ── "Sivikon Difference" 3-card grid ── */
+#difference { background: white; }
+.difference-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.difference-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 36px 32px;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.difference-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--blue), var(--cyan));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.difference-card:hover {
+  border-color: rgba(21,88,214,0.3);
+  box-shadow: 0 12px 32px rgba(21,88,214,0.1);
+  transform: translateY(-3px);
+}
+.difference-card:hover::before { opacity: 1; }
+.difference-icon {
+  width: 56px; height: 56px;
+  border-radius: 16px;
+  background: var(--slate);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px;
+  margin-bottom: 22px;
+}
+.difference-title { font-size: 19px; font-weight: 800; color: var(--navy); margin-bottom: 12px; }
+.difference-desc { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+/* ── Free QA Bug Audit capture banner ── */
+#bug-audit {
+  background: linear-gradient(135deg, var(--navy) 0%, #0D2459 100%);
+  position: relative;
+  overflow: hidden;
+}
+#bug-audit::before {
+  content: '';
+  position: absolute;
+  top: -300px; right: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,194,255,0.15) 0%, transparent 65%);
+  pointer-events: none;
+}
+.audit-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.audit-eyebrow { color: var(--cyan); }
+.audit-title {
+  font-size: clamp(26px, 3.4vw, 40px);
+  font-weight: 900;
+  color: white;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.audit-title .accent { color: var(--cyan); }
+.audit-sub { font-size: 15.5px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+.audit-form { display: flex; flex-direction: column; gap: 14px; }
+.audit-input {
+  width: 100%;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  padding: 15px 18px;
+  color: white;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.audit-input::placeholder { color: rgba(255,255,255,0.4); }
+.audit-input:focus {
+  outline: none;
+  border-color: var(--cyan);
+  background: rgba(0,194,255,0.06);
+}
+.audit-btn { justify-content: center; border: 0; cursor: pointer; }
+.audit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+.audit-error { color: #FF6B81; font-size: 13px; }
+.audit-success {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid rgba(0,200,150,0.4);
+  border-radius: 14px;
+  background: rgba(0,200,150,0.08);
+  padding: 24px;
+}
+.audit-success-icon {
+  width: 44px; height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: 900;
+}
+.audit-success-title { font-size: 16px; font-weight: 800; color: white; margin-bottom: 4px; }
+.audit-success-text { font-size: 13.5px; color: rgba(255,255,255,0.65); line-height: 1.6; }
+
+/* ── About page extras ── */
+#about { background: white; }
+.about-lead { max-width: 720px; margin-bottom: 40px; }
+.about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.about-stat-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  transition: border-color 0.2s;
+}
+.about-stat-card:hover { border-color: var(--blue); }
+.about-stat-num { font-size: 15px; font-weight: 800; color: var(--blue); margin-bottom: 10px; }
+.about-stat-card p { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+
+/* ── Team page ── */
+#team { background: white; }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+.team-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 30px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+.team-card:hover {
+  border-color: rgba(21,88,214,0.3);
+  box-shadow: 0 8px 28px rgba(21,88,214,0.1);
+  transform: translateY(-3px);
+}
+.team-badge {
+  width: 52px; height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue), var(--cyan));
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 800;
+  margin-bottom: 18px;
+}
+.team-name { font-size: 18px; font-weight: 800; color: var(--navy); margin-bottom: 4px; }
+.team-role { font-size: 12px; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
+.team-desc { font-size: 13.5px; color: var(--muted); line-height: 1.7; }
+
+/* ── Contact page ── */
+#contact { background: var(--slate); }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; align-items: start; }
+.contact-info .section-sub { margin-bottom: 28px; }
+.contact-detail { margin-bottom: 20px; }
+.contact-detail-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); margin-bottom: 4px; }
+.contact-detail a, .contact-detail span { font-size: 15px; color: var(--navy); text-decoration: none; }
+.contact-detail a:hover { color: var(--blue); }
+.contact-form-wrap {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px;
+}
+.contact-form { display: flex; flex-direction: column; gap: 18px; }
+.contact-field { display: flex; flex-direction: column; gap: 7px; }
+.contact-field span { font-size: 13px; font-weight: 700; color: var(--navy); }
+.contact-field input, .contact-field textarea {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 13px 15px;
+  font-size: 14.5px;
+  color: var(--navy);
+  background: var(--slate);
+  resize: vertical;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-field input:focus, .contact-field textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: white;
+}
+.contact-form .btn-primary { justify-content: center; border: 0; cursor: pointer; }
+.contact-form .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+.contact-success { border-color: rgba(21,88,214,0.3); background: var(--slate); }
+.contact-success .audit-success-title { color: var(--navy); }
+.contact-success .audit-success-text { color: var(--muted); }
+
+@media (max-width: 960px) {
+  .difference-grid, .about-grid, .team-grid { grid-template-columns: 1fr 1fr; }
+  .audit-inner, .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+  .page-hero { padding: 130px 5% 60px; }
+}
+
+@media (max-width: 640px) {
+  .difference-grid, .about-grid, .team-grid { grid-template-columns: 1fr; }
+  .page-hero { padding: 120px 5% 50px; }
+}
